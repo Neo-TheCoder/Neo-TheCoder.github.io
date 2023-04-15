@@ -308,7 +308,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-04-15 21:45:44 / 修改时间：21:58:42" itemprop="dateCreated datePublished" datetime="2023-04-15T21:45:44+08:00">2023-04-15</time>
+              <time title="创建时间：2023-04-15 21:45:44 / 修改时间：21:59:54" itemprop="dateCreated datePublished" datetime="2023-04-15T21:45:44+08:00">2023-04-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -316,7 +316,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD/" itemprop="url" rel="index"><span itemprop="name">���</span></a>
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
                 </span>
             </span>
 
@@ -326,14 +326,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>11k</span>
+              <span>7.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -345,147 +345,147 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>C++ Primer��</p>
-<h1 id="��һ��"><a href="#��һ��" class="headerlink" title="��һ��"></a>��һ��</h1><p>�ඨ������Ϊ��<br>�ඨ���˴���һ������ʱ�ᷢ��ʲô����</p>
-<h1 id="�ڶ���"><a href="#�ڶ���" class="headerlink" title="�ڶ���"></a>�ڶ���</h1><p>�����ͻ�������</p>
-<p>����<br>��ֵ���ñ��뱻��ʼ��<br>��������ʱ����������ú����ĳ�ʼֵ����һ�𣬶����ǰѳ�ʼֵ���������á�<br>�޷����������°󶨵�����һ������<br>int &amp;b &#x3D; a;<br>����ִ��b &#x3D; c����ֻ�ǰ�c��ֵ������a��a��b֮��İ󶨹�ϵû�� –&gt; ���Ա��븳��ֵ<br>����const���ã����޷����ı����õĶ����ֵ��</p>
-<p>ָ��<br>��ָ�����踳��ֵ��<br>��ָ�� nullptr<br>��ֵ��Զ�ı���ǵȺ���ߵĶ���</p>
-<p>void* ���Դ���������ĵ�ַ<br>��������Ϊ�������������������߸�������һ��voidָ��</p>
-<p>����ָ��<br>ָ��ָ�������<br>int *&amp; r &#x3D; p</p>
-<p>const �޶���<br>const int t&#x3D; 111;<br>�κ���ͼ�޸ĵ���Ϊ������������<br>������ʵ������ֱ���滻�ñ���</p>
+          <p>C++ Primer：</p>
+<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p>类定义了行为：<br>类定义了创建一个对象时会发生什么事情</p>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><p>变量和基本类型</p>
+<p>引用<br>左值引用必须被初始化<br>定义引用时，程序把引用和它的初始值绑定在一起，而不是把初始值拷贝给引用。<br>无法令引用重新绑定到另外一个对象。<br>int &amp;b &#x3D; a;<br>若再执行b &#x3D; c，那只是把c的值赋给了a，a和b之间的绑定关系没变 –&gt; 所以必须赋初值<br>若是const引用，则无法更改被引用的对象的值。</p>
+<p>指针<br>而指针无需赋初值。<br>空指针 nullptr<br>赋值永远改变的是等号左边的对象</p>
+<p>void* 可以存放任意对象的地址<br>可用于作为函数的输入或输出，或者赋给另外一个void指针</p>
+<p>二级指针<br>指向指针的引用<br>int *&amp; r &#x3D; p</p>
+<p>const 限定符<br>const int t&#x3D; 111;<br>任何试图修改的行为都将引发错误<br>编译器实际上是直接替换该变量</p>
 <p>const int &amp;r1 &#x3D; ci;</p>
-<p>ע����Ȼ���õ����ͱ������������õĶ��������һ�£��������������1���ٳ�ʼ����������ʱ�������������ʽ��Ϊ��ʼֵ��ֻҪ�����ܹ�ת����֧�ֵ��������ͼ��ɡ�����Ϊһ���������ð󶨷ǳ����Ķ�������ֵ��������һ�����ʽ��</p>
-<p>int i&#x3D;42;<br>const int &amp;r1&#x3D;i;    &#x2F;&#x2F; ��ȷ<br>const int &amp;r2&#x3D;42;   &#x2F;&#x2F;��ȷ<br>const int &amp;r4 &#x3D; r1*2;   &#x2F;&#x2F;����<br>r4��������ͨ�ķǳ�������</p>
-<p>��һ���������ñ��󶨵�����һ������ʱ���׷�����ʲô��<br>double dval &#x3D; 3.14;<br>const int &amp;ri &#x3D; dval;</p>
-<p>ri������һ��ini���͵�����<br>���������Ż���<br>const int tmp &#x3D; dval;   &#x2F;&#x2F; ����˫���ȸ��������ɵ�һ����ʱ�����γ���tmp<br>const int &amp;ri &#x3D; tmp;    &#x2F;&#x2F; ��r1�������ʱ��</p>
-<p>�������ò����޸�ֵ</p>
-<p>ָ������ָ�롤���ܡ����ڸı�����ָ�����ֵ<br>���������Ӧ��ָ�����Ҳ��const</p>
-<p>����ָ������ʼ��</p>
-<p>const double pi &#x3D; 3.14;<br>const double *const pip &#x3D; &amp;pi;<br>���������󿴣�</p>
-<p>����const��ʾָ�뱾���Ǹ�����<br>int i &#x3D; 0;<br>int *const p1 &#x3D; &amp;i; &#x2F;&#x2F; p1��ֵ�޷��ı�</p>
-<p>�ײ�const��ʾָ����ָ�Ķ�����һ������<br>�ײ�const��<br>��ִ�ж���Ŀ�������ʱ������Ϳ����Ķ�����������ͬ�ĵײ�const�ʸ񣬻�������������������Ϳ���ת����</p>
-<p>const int &amp;r &#x3D; ci;<br>�����������õ�const���ǵײ�const</p>
-<p>��ִ�ж���Ŀ�������ʱ�������Ƕ���const���ǵײ�const�������ԣ�����const����ʲôӰ�졣</p>
-<p>int i &#x3D; 0;<br>int *const p1 &#x3D; &amp;i; &#x2F;&#x2F; ����const�����ܸı�p1��ֵ<br>const int ci &#x3D; 42;  &#x2F;&#x2F; ���ܸı�ci��ֵ������const<br>const int *p2 &#x3D; &amp;ci;    &#x2F;&#x2F; �ײ�const�������ı�p2��ֵ<br>const int *const p3 &#x3D; p2;   &#x2F;&#x2F; ��ߵ�const�ǵײ�</p>
-<p>i &#x3D; ci; &#x2F;&#x2F; ��ȷ ci�Ƕ���const<br>p2 &#x3D; p3;    &#x2F;&#x2F; ��ȷ��p2,p3ָ��Ķ���������ͬ</p>
-<p>�ײ�const�����Ʋ��ܺ��ӣ�<br>��������ʱ������Ϳ����Ķ�����������ͬ�ĵײ�const�ʸ�<br>�����������Ϳ���ת��<br>�ǳ�������ת���ɳ���</p>
-<p>int <em>p &#x3D; p3;    &#x2F;&#x2F; p3�����ײ�const�Ķ��壬��pû��<br>p2 &#x3D; p3;    &#x2F;&#x2F; ��ȷ<br>p2 &#x3D; &amp;i;    &#x2F;&#x2F; int ����תΪconst int</em><br>int &amp;r &#x3D; ci;    &#x2F;&#x2F; ������ͨ��int&amp;���ܰ󶨵�int������<br>const int &amp;r2 &#x3D; i;  &#x2F;&#x2F; ��ȷ</p>
-<p>��������ʽ<br>constexpr<br>ֵ����ı䲢���ڱ�����̾��ܵõ��������ı���ʽ</p>
-<p>const int t &#x3D; 20;   &#x2F;&#x2F; t�ǳ�������ʽ</p>
-<p>����ֵ���ͣ�<br>�������͡����ú�ָ��<br>�Զ����ࡢIO�⡢string���;Ͳ�����<br>const int *p &#x3D; nullptr; &#x2F;&#x2F; ָ�����ͳ�����ָ��<br>constexpr int *q &#x3D; nullptr; &#x2F;&#x2F; ��ָ�������ĳ���ָ��</p>
-<h2 id="2-5-��������"><a href="#2-5-��������" class="headerlink" title="2.5 ��������"></a>2.5 ��������</h2><h3 id="2-5-1-���ͱ���"><a href="#2-5-1-���ͱ���" class="headerlink" title="2.5.1 ���ͱ���"></a>2.5.1 ���ͱ���</h3><p>typedef double wages;   &#x2F;&#x2F; ͬ���<br>typedef wages base, *p; &#x2F;&#x2F; base��double��ͬ��� p��double*��ͬ���</p>
-<p>����������<br>using SI &#x3D; Sales_item;</p>
-<p>typedef char *pstring;  &#x2F;&#x2F; ��˼�ǣ�pstring��ָ��char��ָ��<br>const pstring cstr &#x3D; 0; &#x2F;&#x2F; ָ��char�ĳ���ָ��<br>const pstring *ps; &#x2F;&#x2F; ps��һ��ָ�룬������ָ��char�ĳ���ָ��</p>
-<p>ע�⣬�����滻������<br>const char <em>cstr &#x3D; 0; &#x2F;&#x2F;�Ǵ����<br>ԭ���ǣ�<br>const pstring cstr &#x3D; 0; &#x2F;&#x2F; ��ζ�Ż�������������ָ��<br>������д�Ļ����������;ͱ����char��</em>������������һ���֣��ͱ����ָ����char��ָ��</p>
-<p>auto����˵����<br>�ñ�������������ʽ����������<br>����ͨ����ʼֵ������ģ�����auto����ı��������г�ʼֵ</p>
-<p>auto����Ӷ���const�������ײ�const��</p>
-<p>������Ϊauto�����ÿ��Ա������㳣�����ԡ�</p>
-<p>&amp;��*��ֻ������ĳ�������������ǻ����������͵�һ���֡�</p>
-<p>decltype����ָʾ��<br>ϣ���ӱ���ʽ�������ƶϳ�������ı��������ͣ����ǲ����øñ���ʽ��ֵ��ʼ������<br>�����ǣ�ѡ�񲢷��ز���������������<br>��������������ʽ���õ��������ͣ�ȴ��ʵ�ʼ������ʽ��ֵ<br>decltype��������const<br>int i&#x3D;42,*p&#x3D;&amp;i,&amp;r&#x3D;i;<br>decltype(*p)c;  &#x2F;&#x2F; ����ʽ�ǽ����ã�decltype�õ���������<br>������ָ����Եõ�ָ����ָ�Ķ�����˵õ���������</p>
-<p>int i&#x3D; 42;<br>decltype((i)) d;    &#x2F;&#x2F; ����d��int&amp;�������ʼ��<br>˫�����ţ��������������ɱ���ʽ���ǿ�����Ϊ��ֵ�����ֵ���������ʽ ��֮˫�����ŵĽ����Զ������<br>decltype(i)e;   &#x2F;&#x2F;��ȷ int</p>
-<p>2.6.3 ͷ�ļ�<br>��ͨ����������ͷ�ļ���ͷ�ļ�ͨ��������Щֻ�ܱ�����һ�ε�ʵ��</p>
-<p>Ԥ�������Ĺ���������ǰ��Ԥ��������һЩ�滻<br>ͷ�ļ�������������Ԥ��������<br>#define��һ�������趨ΪԤ��������<br>#ifdef���ҽ��������Ѷ���ʱΪ�� ִ�в���ֱ��#endif<br>#ifndef ~<br>���ڷ�ֹ�ظ������ķ���</p>
-<h1 id="������"><a href="#������" class="headerlink" title="������"></a>������</h1><p>ͷ�ļ���Ӧ����using��������Ϊͷ�ļ������ݻᱻ�������������������ļ���ȥ�������������ֳ�ͻ</p>
-<h2 id="3-2��׼������string"><a href="#3-2��׼������string" class="headerlink" title="3.2��׼������string"></a>3.2��׼������string</h2><p>&#x3D;ʵ�����ǿ�����ʼ��</p>
-<h2 id="3-3-vector"><a href="#3-3-vector" class="headerlink" title="3.3 vector"></a>3.3 vector</h2><p>��һ����ģ��<br>����ģ�崴������ߺ����Ĺ��̳�Ϊʵ����<br>vector<T>v4{1,2,3};<br>������()Բ����</T></p>
-<p>vector�����ܸ�Ч����<br>����ʹ���±���ʽ����Ԫ�أ���Ӧ��ʹ��push_back<br>�±�ֻ�ܷ����Ѵ��ڵ�</p>
-<p>3.4 ����������<br>������ָ�����ͣ��ṩ�Զ���ļ�ӷ���</p>
-<p>�е�����������ͬʱӵ�з��ص������ĳ�Ա<br>��Щ���Ͷ���begin��end�ĳ�Ա��begin��Ա���𷵻�ָ���һ��Ԫ��<br>auto b &#x3D; v.begin()  &#x2F;&#x2F; �ɱ���������b������<br>end��Ա���صĵ�������Ϊβ�������<br>ͨ����&#x3D;&#x3D; !&#x3D;�����</p>
-<p>forѭ������!&#x3D;����&lt;������Ϊ���ַ���ڱ�׼���ṩ�����������϶���Ч</p>
-<p>����ʹ���˵�������ѭ���壬��Ҫ���������������������Ԫ��</p>
-<p>3.5 ����<br>int *p[10]; &#x2F;&#x2F; ����10������ָ�������<br>�±�������ڱ����ǳ�������ʽ<br>�ַ��������һ�����ַ�’\0’</p>
-<p>������������ɵ�����<br>int (*p)[10] &#x3D; &amp;arr;    &#x2F;&#x2F; ָ��һ������10������������<br>Ĭ������£��������η������������ΰ�<br>���Ƕ���������ԣ����������Ķ�</p>
-<p>ʹ�������ʱ�������һ������ת����ָ��</p>
-<p>string *p2 &#x3D; nums;  &#x2F;&#x2F; nums���ַ�������<br>�ȼ��� p2 &#x3D; &amp;nums[0]</p>
-<p>ָ�����һ�������������ָ��<br>��������c����ַ���<br>����ʹ��vector�͵�����������ʹ�����������ָ��</p>
-<h1 id="������-����ʽ"><a href="#������-����ʽ" class="headerlink" title="������ ����ʽ"></a>������ ����ʽ</h1><p>���ڽ��Ϊ��ֵ�ı���ʽ��decltype�Ľ��Ϊ�������͡�<br>��������ͼ�ͷ��������������ڷ��ʳ�Ա��<br>ptr-&gt;mem�ȼ���(*ptr).mem</p>
-<h2 id="4-11-����ת��"><a href="#4-11-����ת��" class="headerlink" title="4.11 ����ת��"></a>4.11 ����ת��</h2><p>��ʽת��������Ҫ����Ա����<br>����ת����ָ��<br>ָ������ǳ�����ָ����ת����void<em>��ָ����������ָ����ת����const void</em></p>
-<p>������������С��������ת���ɽϴ����������</p>
-<h3 id="4-11-3-��ʽת��"><a href="#4-11-3-��ʽת��" class="headerlink" title="4.11.3 ��ʽת��"></a>4.11.3 ��ʽת��</h3><p>ǿ������ת��(cast)</p>
-<h4 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h4><p>ֻҪ�������ײ�const��������ʹ��<br>ͨ�����ڲ����ھ�����ʧ�����</p>
-<h4 id="dynamic-cast"><a href="#dynamic-cast" class="headerlink" title="dynamic_cast"></a>dynamic_cast</h4><p>����ʱ����ʶ��</p>
-<h4 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h4><p>������ȥ��const���ʣ�ֻ�ܸı��������ĵײ�const<br>�����������غ�����������</p>
-<h4 id="reinterpret-cast"><a href="#reinterpret-cast" class="headerlink" title="reinterpret_cast"></a>reinterpret_cast</h4><p>Ϊ��������λģʽ�ṩ�ϵͲ���ϵ����½���<br>int *ip;<br>char *pc &#x3D; reinterpret_cast&lt;char*&gt;(ip);<br>pc��ָ����ʵ������һ��int�����ַ��������pc������ͨ���ַ�ָ��ʹ�þͿ���������ʱ��������<br>reinterpret_cast��ʹ����Σ�յģ������������ڻ�����</p>
-<p>��ñ���ǿ������ת����</p>
-<h1 id="������-���"><a href="#������-���" class="headerlink" title="������ ���"></a>������ ���</h1><p>����䣬�﷨����Ҫ���߼��ϲ���Ҫ</p>
+<p>注意虽然引用的类型必须与其所引用的对象的类型一致，但是例外情况：1、再初始化常量引用时允许用任意表达式作为初始值，只要其结果能够转化成支持的引用类型即可。允许为一个常量引用绑定非常量的对象、字面值，甚至是一般表达式。</p>
+<p>int i&#x3D;42;<br>const int &amp;r1&#x3D;i;    &#x2F;&#x2F; 正确<br>const int &amp;r2&#x3D;42;   &#x2F;&#x2F;正确<br>const int &amp;r4 &#x3D; r1*2;   &#x2F;&#x2F;错误<br>r4本身是普通的非常量引用</p>
+<p>当一个常量引用被绑定到另外一种类型时到底发生了什么？<br>double dval &#x3D; 3.14;<br>const int &amp;ri &#x3D; dval;</p>
+<p>ri引用了一个ini类型的数，<br>编译器会优化：<br>const int tmp &#x3D; dval;   &#x2F;&#x2F; 由于双精度浮点数生成的一个临时的整形常量tmp<br>const int &amp;ri &#x3D; tmp;    &#x2F;&#x2F; 让r1绑定这个临时量</p>
+<p>常量引用不能修改值</p>
+<p>指向常量的指针·不能·用于改变其所指对象的值<br>常量对象对应的指针必须也是const</p>
+<p>常量指针必须初始化</p>
+<p>const double pi &#x3D; 3.14;<br>const double *const pip &#x3D; &amp;pi;<br>（从右往左看）</p>
+<p>顶层const表示指针本身是个常量<br>int i &#x3D; 0;<br>int *const p1 &#x3D; &amp;i; &#x2F;&#x2F; p1的值无法改变</p>
+<p>底层const表示指针所指的对象是一个常量<br>底层const：<br>当执行对象的拷贝操作时，拷入和拷出的对象必须具有相同的底层const资格，或者两个对象的数据类型可以转换。</p>
+<p>const int &amp;r &#x3D; ci;<br>用于声明引用的const都是底层const</p>
+<p>当执行对象的拷贝操作时，常量是顶层const还是底层const区别明显，顶层const不受什么影响。</p>
+<p>int i &#x3D; 0;<br>int *const p1 &#x3D; &amp;i; &#x2F;&#x2F; 顶层const，不能改变p1的值<br>const int ci &#x3D; 42;  &#x2F;&#x2F; 不能改变ci的值，顶层const<br>const int *p2 &#x3D; &amp;ci;    &#x2F;&#x2F; 底层const，允许改变p2的值<br>const int *const p3 &#x3D; p2;   &#x2F;&#x2F; 左边的const是底层</p>
+<p>i &#x3D; ci; &#x2F;&#x2F; 正确 ci是顶层const<br>p2 &#x3D; p3;    &#x2F;&#x2F; 正确，p2,p3指向的对象类型相同</p>
+<p>底层const的限制不能忽视：<br>拷贝操作时，拷入和拷出的对象必须具有相同的底层const资格<br>或者数据类型可以转换<br>非常量可以转换成常量</p>
+<p>int <em>p &#x3D; p3;    &#x2F;&#x2F; p3包含底层const的定义，而p没有<br>p2 &#x3D; p3;    &#x2F;&#x2F; 正确<br>p2 &#x3D; &amp;i;    &#x2F;&#x2F; int 可以转为const int</em><br>int &amp;r &#x3D; ci;    &#x2F;&#x2F; 错误，普通的int&amp;不能绑定到int常量上<br>const int &amp;r2 &#x3D; i;  &#x2F;&#x2F; 正确</p>
+<p>常量表达式<br>constexpr<br>值不会改变并且在编译过程就能得到计算结果的表达式</p>
+<p>const int t &#x3D; 20;   &#x2F;&#x2F; t是常量表达式</p>
+<p>字面值类型：<br>算术类型、引用和指针<br>自定义类、IO库、string类型就不属于<br>const int *p &#x3D; nullptr; &#x2F;&#x2F; 指向整型常量的指针<br>constexpr int *q &#x3D; nullptr; &#x2F;&#x2F; 是指向整数的常量指针</p>
+<h2 id="2-5-处理类型"><a href="#2-5-处理类型" class="headerlink" title="2.5 处理类型"></a>2.5 处理类型</h2><h3 id="2-5-1-类型别名"><a href="#2-5-1-类型别名" class="headerlink" title="2.5.1 类型别名"></a>2.5.1 类型别名</h3><p>typedef double wages;   &#x2F;&#x2F; 同义词<br>typedef wages base, *p; &#x2F;&#x2F; base是double的同义词 p是double*的同义词</p>
+<p>别名声明：<br>using SI &#x3D; Sales_item;</p>
+<p>typedef char *pstring;  &#x2F;&#x2F; 意思是：pstring是指向char的指针<br>const pstring cstr &#x3D; 0; &#x2F;&#x2F; 指向char的常量指针<br>const pstring *ps; &#x2F;&#x2F; ps是一个指针，对象是指向char的常量指针</p>
+<p>注意，不能替换以理解<br>const char <em>cstr &#x3D; 0; &#x2F;&#x2F;是错误的<br>原因是：<br>const pstring cstr &#x3D; 0; &#x2F;&#x2F; 意味着基本数据类型是指针<br>这样改写的话，数据类型就变成了char，</em>成了声明符的一部分，就变成了指向常量char的指针</p>
+<p>auto类型说明符<br>让编译器分析表达式所属的类型<br>这是通过初始值来推算的，所以auto定义的变量必须有初始值</p>
+<p>auto会忽视顶层const，保留底层const。</p>
+<p>而类型为auto的引用可以保留顶层常量属性。</p>
+<p>&amp;和*都只从属于某个声明符，而非基本数据类型的一部分。</p>
+<p>decltype类型指示符<br>希望从表达式的类型推断出腰定义的变量的类型，但是不想用该表达式的值初始化变量<br>作用是：选择并返回操作数的数据类型<br>编译器分析表达式并得到它的类型，却不实际计算表达式的值<br>decltype保留顶层const<br>int i&#x3D;42,*p&#x3D;&amp;i,&amp;r&#x3D;i;<br>decltype(*p)c;  &#x2F;&#x2F; 表达式是解引用，decltype得到引用类型<br>解引用指针可以得到指针所指的对象，因此得到的是引用</p>
+<p>int i&#x3D; 42;<br>decltype((i)) d;    &#x2F;&#x2F; 错误，d是int&amp;，必须初始化<br>双层括号，编译器把它当成表达式，是可以作为赋值语句左值的特殊表达式 总之双层括号的结果永远是引用<br>decltype(i)e;   &#x2F;&#x2F;正确 int</p>
+<p>2.6.3 头文件<br>类通常被定义在头文件，头文件通常包含那些只能被定义一次的实体</p>
+<p>预处理器的工作：编译前的预处理，做一些替换<br>头文件保护符依赖于预处理变量<br>#define把一个名字设定为预处理变量<br>#ifdef当且仅当变量已定义时为真 执行操作直到#endif<br>#ifndef ~<br>用于防止重复包含的发生</p>
+<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><p>头文件不应包含using声明，因为头文件的内容会被拷贝到所有引用它的文件中去，可能引起名字冲突</p>
+<h2 id="3-2标准库类型string"><a href="#3-2标准库类型string" class="headerlink" title="3.2标准库类型string"></a>3.2标准库类型string</h2><p>&#x3D;实际上是拷贝初始化</p>
+<h2 id="3-3-vector"><a href="#3-3-vector" class="headerlink" title="3.3 vector"></a>3.3 vector</h2><p>是一个类模板<br>根据模板创建类或者函数的过程称为实例化<br>vector<T>v4{1,2,3};<br>而不是()圆括号</T></p>
+<p>vector对象能高效增长<br>不能使用下标形式添加元素，而应该使用push_back<br>下标只能访问已存在的</p>
+<p>3.4 迭代器介绍<br>类似于指针类型，提供对对象的间接访问</p>
+<p>有迭代器的类型同时拥有返回迭代器的成员<br>这些类型都有begin和end的成员，begin成员负责返回指向第一个元素<br>auto b &#x3D; v.begin()  &#x2F;&#x2F; 由编译器决定b的类型<br>end成员返回的迭代器称为尾后迭代器<br>通常用&#x3D;&#x3D; !&#x3D;运算符</p>
+<p>for循环种用!&#x3D;而非&lt;，是因为这种风格在标准库提供的所有容器上都有效</p>
+<p>凡是使用了迭代器的循环体，不要向迭代器所属的容器添加元素</p>
+<p>3.5 数组<br>int *p[10]; &#x2F;&#x2F; 含有10个整型指针的数组<br>下标运算符内必须是常量表达式<br>字符数组必有一个空字符’\0’</p>
+<p>不存在引用组成的数组<br>int (*p)[10] &#x3D; &amp;arr;    &#x2F;&#x2F; 指向一个含有10个整数的数组<br>默认情况下，类型修饰符从右向左依次绑定<br>但是对于数组而言，由内向外阅读</p>
+<p>使用数组的时候编译器一般会把它转换成指针</p>
+<p>string *p2 &#x3D; nums;  &#x2F;&#x2F; nums是字符串数组<br>等价于 p2 &#x3D; &amp;nums[0]</p>
+<p>指针加上一个整数结果还是指针<br>尽量别用c风格字符串<br>尽量使用vector和迭代器，避免使用内置数组和指针</p>
+<h1 id="第四章-表达式"><a href="#第四章-表达式" class="headerlink" title="第四章 表达式"></a>第四章 表达式</h1><p>对于结果为左值的表达式，decltype的结果为引用类型。<br>点运算符和箭头运算符都可以用于访问成员。<br>ptr-&gt;mem等价于(*ptr).mem</p>
+<h2 id="4-11-类型转换"><a href="#4-11-类型转换" class="headerlink" title="4.11 类型转换"></a>4.11 类型转换</h2><p>隐式转换：不需要程序员介入<br>数组转换成指针<br>指向任意非常量的指针能转换成void<em>，指向任意对象的指针能转换成const void</em></p>
+<p>整型提升：把小整数类型转换成较大的整数类型</p>
+<h3 id="4-11-3-显式转换"><a href="#4-11-3-显式转换" class="headerlink" title="4.11.3 显式转换"></a>4.11.3 显式转换</h3><p>强制类型转换(cast)</p>
+<h4 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h4><p>只要不包含底层const，都可以使用<br>通常用于不在于精度损失的情况</p>
+<h4 id="dynamic-cast"><a href="#dynamic-cast" class="headerlink" title="dynamic_cast"></a>dynamic_cast</h4><p>运行时类型识别</p>
+<h4 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h4><p>作用是去掉const性质，只能改变运算对象的底层const<br>常用于有重载函数的上下文</p>
+<h4 id="reinterpret-cast"><a href="#reinterpret-cast" class="headerlink" title="reinterpret_cast"></a>reinterpret_cast</h4><p>为运算对象的位模式提供较低层次上的重新解释<br>int *ip;<br>char *pc &#x3D; reinterpret_cast&lt;char*&gt;(ip);<br>pc所指的真实对象是一个int而非字符，如果把pc当成普通的字符指针使用就可能在运行时发生错误。<br>reinterpret_cast的使用是危险的，本质上依赖于机器。</p>
+<p>最好避免强制类型转换。</p>
+<h1 id="第五章-语句"><a href="#第五章-语句" class="headerlink" title="第五章 语句"></a>第五章 语句</h1><p>空语句，语法上需要但逻辑上不需要</p>
 <p>switch(ch){<br>case ‘a’:<br>    xxx;<br>    break;<br>case ‘b’:<br>    xxx;<br>    break;</p>
 <p>}</p>
-<p>continue�жϵ�ǰ����������ִ��ѭ��</p>
-<p>try catch��<br>try {<br>    xxx;<br>}<br>catch(�쳣����){<br>    �����߼�;<br>}<br>catch(runtime_error err){<br>    std::cout&lt;&lt;err.what()&lt;&lt;std::endl;<br>}</p>
-<p>��д�쳣��ȫ�Ĵ���ǳ�����</p>
-<h1 id="������-����"><a href="#������-����" class="headerlink" title="������ ����"></a>������ ����</h1><p>�������β��б���<br>int f4(int v1,int v2)</p>
-<p>�ֲ�����<br>�����������򡢶�������������<br>������ֹʱ���β�Ҳ���Զ�����</p>
-<p>�ֲ���̬����<br>ʹ�þֲ��������������ڹᴩ�������ü�֮���ʱ��<br>static����</p>
-<p>����ֻ�ܶ���һ�Σ������ܱ��������<br>��������Ҳ����������ԭ��<br>��������ͷ�ļ����������Դ�ļ�<br>ͷ�ļ������������庯����Դ�ļ���</p>
-<p>����ʽ����<br>�ѳ���ָ����ļ���ÿ���ļ���������</p>
-<h2 id="6-2-��������"><a href="#6-2-��������" class="headerlink" title="6.2 ��������"></a>6.2 ��������</h2><p>������ &#x2F; ��ֵ</p>
-<p>ʹ�����ñ��⿽��<br>�������ڴ����Ͷ��Ե�Ч�������е������Ͳ�֧�ֿ���</p>
-<p>�������ı������βε�ֵ���������Ϊ��������</p>
-<p>const�βκ�ʵ��<br>�β��ж���constʱ������������������߷ǳ��������ǿ��Ե�<br>int i &#x3D; 0;<br>const int ci &#x3D; i;<br>reset(ci);  &#x2F;&#x2F; �Ǵ��ģ���Ϊci�ǲ����޸ĵ�</p>
-<p>����ʹ�ó�������</p>
-<p>f(int (&amp;arr)[10])   &#x2F;&#x2F; arr�Ǿ���10���������������������</p>
-<h3 id="6-2-5-����������ѡ��"><a href="#6-2-5-����������ѡ��" class="headerlink" title="6.2.5 ����������ѡ��"></a>6.2.5 ����������ѡ��</h3><p>prog -d -o ofile data0<br>int main(int argc , char *argv[])<br>argc����ʾ�������ַ���������<br>argv��ָ���ַ�����ָ��</p>
-<p>argv[0]&#x3D;”prog”<br>argv[1]&#x3D;”-d”<br>argv[2]&#x3D;”-o”<br>…<br>argv[5]&#x3D;0   &#x2F;&#x2F; ���һ��Ԫ�ر���Ϊ0</p>
-<p>PS: int *p[4]   &#x2F;&#x2F; ���γ�����<br>    int (<em>p)[4] &#x2F;&#x2F; ���γ�ָ��<br>ע�⣺()���ȼ���[]�ߣ�[]�����ȼ���</em>��</p>
-<p>6.26 ���пɱ��βεĺ���<br>��������Ҫ��д���������������Ĵ�����Ϣ�������ͬһ������ʵ�ָù���<br>������е�ʵ��������ͬ�����Դ���һ����Ϊinitializer_list�ı�׼������<br>���ʵ�����Ͳ�ͬ����ʹ�ÿɱ����ģ��<br>eg initializer_list<int>li;<br>����Ԫ����Զ�ǳ���ֵ���޷��ı���ֵ<br>���initializer_list�����������β�</int></p>
-<p>ʡ�Է��β�<br>ֻ�ܳ������β��б������һ��λ��<br>void foo(parm_list,…);<br>void foo(…);</p>
-<h2 id="6-3-�������ͺ�return���"><a href="#6-3-�������ͺ�return���" class="headerlink" title="6.3 �������ͺ�return���"></a>6.3 �������ͺ�return���</h2><p>*** ��Ҫ���ؾֲ���������û�ָ�� ***<br>���Ǵ���ģ���Ϊ������ֹʱ���ֲ����������ý�ָ������Ч���ڴ�����</p>
-<p>���÷�����ֵ<br>����һ���������õĺ����õ���ֵ���������͵õ���ֵ</p>
-<p>�б���ʼ������ֵ<br>�Ի�������ʽ����<br>����main����û��return���ֱ�ӽ���–&gt;��������ʽ�ز���return 0</p>
-<h3 id="6-3-3-��������ָ��"><a href="#6-3-3-��������ָ��" class="headerlink" title="6.3.3 ��������ָ��"></a>6.3.3 ��������ָ��</h3><p>typedef int arr[10];    &#x2F;&#x2F; arr��ʾ�������Ǻ���10������������<br>using arr &#x3D; int[10];</p>
-<p>����һ����������ָ��ĺ���<br>int *p1[10];    &#x2F;&#x2F; p1��һ������10��ָ�������<br>int (*p2)[10]&#x3D;&amp;arr; &#x2F;&#x2F; p2��һ��ָ�룬ָ������</p>
-<p>int ((<em>func(int i))[10];<br>Ŀ���Ƿ�������ָ�룬�����ŵĻ���ʾ�Ⱥ�</em>���Ž��</p>
-<p>β�÷�������<br>auto func(int i) -&gt; int(*)[10];</p>
-<h2 id="6-4-��������"><a href="#6-4-��������" class="headerlink" title="6.4 ��������"></a>6.4 ��������</h2><p>main������������<br>����������ʵ�ε�����ȷ��Ӧ�õ�����һ������</p>
-<p>Record lookup(const Account&amp;);  &#x2F;&#x2F; ʡ�����βε�����<br>����ʱ����ʡ�ԣ����Ƕ���ʱһ��Ҫ��</p>
-<p>���غ���ʱ������const������������</p>
-<p>�ײ�const������</p>
+<p>continue中断当前迭代，继续执行循环</p>
+<p>try catch：<br>try {<br>    xxx;<br>}<br>catch(异常声明){<br>    处理逻辑;<br>}<br>catch(runtime_error err){<br>    std::cout&lt;&lt;err.what()&lt;&lt;std::endl;<br>}</p>
+<p>编写异常安全的代码非常困难</p>
+<h1 id="第六章-函数"><a href="#第六章-函数" class="headerlink" title="第六章 函数"></a>第六章 函数</h1><p>函数的形参列表：<br>int f4(int v1,int v2)</p>
+<p>局部对象<br>名字有作用域、对象有生命周期<br>函数终止时，形参也被自动销毁</p>
+<p>局部静态对象<br>使得局部变量的生命周期贯穿函数调用及之后的时间<br>static声明</p>
+<p>函数只能定义一次，但是能被声明多次<br>函数声明也被称作函数原型<br>声明放在头文件，定义放在源文件<br>头文件被包含到定义函数的源文件中</p>
+<p>分离式编译<br>把程序分割到多个文件，每个文件独立编译</p>
+<h2 id="6-2-参数传递"><a href="#6-2-参数传递" class="headerlink" title="6.2 参数传递"></a>6.2 参数传递</h2><p>传引用 &#x2F; 传值</p>
+<p>使用引用避免拷贝<br>拷贝对于大类型而言低效，甚至有的类类型不支持拷贝</p>
+<p>如果无须改变引用形参的值，最好声明为常量引用</p>
+<p>const形参和实参<br>形参有顶层const时，传给它常量对象或者非常量对象都是可以的<br>int i &#x3D; 0;<br>const int ci &#x3D; i;<br>reset(ci);  &#x2F;&#x2F; 是错的，因为ci是不可修改的</p>
+<p>尽量使用常量引用</p>
+<p>f(int (&amp;arr)[10])   &#x2F;&#x2F; arr是具有10个整数的整型数组的引用</p>
+<h3 id="6-2-5-处理命令行选项"><a href="#6-2-5-处理命令行选项" class="headerlink" title="6.2.5 处理命令行选项"></a>6.2.5 处理命令行选项</h3><p>prog -d -o ofile data0<br>int main(int argc , char *argv[])<br>argc：表示数组中字符串的数量<br>argv：指向字符串的指针</p>
+<p>argv[0]&#x3D;”prog”<br>argv[1]&#x3D;”-d”<br>argv[2]&#x3D;”-o”<br>…<br>argv[5]&#x3D;0   &#x2F;&#x2F; 最后一个元素必须为0</p>
+<p>PS: int *p[4]   &#x2F;&#x2F; 先形成数组<br>    int (<em>p)[4] &#x2F;&#x2F; 先形成指针<br>注意：()优先级比[]高，[]的优先级比</em>高</p>
+<p>6.26 含有可变形参的函数<br>场景：想要编写代码输出程序产生的错误信息，最好用同一个函数实现该功能<br>如果所有的实参类型相同，可以传递一个名为initializer_list的标准库类型<br>如果实参类型不同，可使用可变参数模板<br>eg initializer_list<int>li;<br>其中元素永远是常量值，无法改变其值<br>这个initializer_list可用作函数形参</int></p>
+<p>省略符形参<br>只能出现在形参列表的最后一个位置<br>void foo(parm_list,…);<br>void foo(…);</p>
+<h2 id="6-3-返回类型和return语句"><a href="#6-3-返回类型和return语句" class="headerlink" title="6.3 返回类型和return语句"></a>6.3 返回类型和return语句</h2><p>*** 不要返回局部对象的引用或指针 ***<br>这是错误的，因为函数终止时，局部变量的引用将指向不再有效的内存区域</p>
+<p>引用返回左值<br>调用一个返回引用的函数得到左值，其他类型得到右值</p>
+<p>列表初始化返回值<br>以花括号形式返回<br>允许main函数没有return语句直接结束–&gt;编译器隐式地插入return 0</p>
+<h3 id="6-3-3-返回数组指针"><a href="#6-3-3-返回数组指针" class="headerlink" title="6.3.3 返回数组指针"></a>6.3.3 返回数组指针</h3><p>typedef int arr[10];    &#x2F;&#x2F; arr表示的类型是含有10个整数的数组<br>using arr &#x3D; int[10];</p>
+<p>声明一个返回数组指针的函数<br>int *p1[10];    &#x2F;&#x2F; p1是一个含有10个指针的数组<br>int (*p2)[10]&#x3D;&amp;arr; &#x2F;&#x2F; p2是一个指针，指向数组</p>
+<p>int ((<em>func(int i))[10];<br>目的是返回数组指针，加括号的话表示先和</em>符号结合</p>
+<p>尾置返回类型<br>auto func(int i) -&gt; int(*)[10];</p>
+<h2 id="6-4-函数重载"><a href="#6-4-函数重载" class="headerlink" title="6.4 函数重载"></a>6.4 函数重载</h2><p>main函数不能重载<br>编译器根据实参的类型确定应该调用哪一个函数</p>
+<p>Record lookup(const Account&amp;);  &#x2F;&#x2F; 省略了形参的名字<br>声明时可以省略，但是定义时一定要有</p>
+<p>重载函数时，顶层const并不足以区分</p>
+<p>底层const可区分</p>
 <p>Record lookup(Account&amp;);<br>Record lookup(const Account&amp;);</p>
-<p>const_cast���������غ��� ȥ��const����<br>ʵ�֣���ʵ�β��ǳ���ʱ������ֵҲ���ǳ���</p>
-<p>�ڲ�ͬ�������򣨺������ڲ�Ҳ�������������޷����غ�����</p>
-<h3 id="6-5-1-I��ʵ��"><a href="#6-5-1-I��ʵ��" class="headerlink" title="6.5.1 Ĭ��ʵ��"></a>6.5.1 Ĭ��ʵ��</h3><p>ĳЩ�������βΣ��ں����ĺܶ�ε����ж�������һ����ͬ��ֵ��<br>ȱʡֵֻ�����Ҳ�</p>
-<h3 id="6-5-2-��������"><a href="#6-5-2-��������" class="headerlink" title="6.5.2 ��������"></a>6.5.2 ��������</h3><p>���⺯�����õĿ���</p>
-<p>���������ֱ�ӽ����滻<br>ʡȥ�˺�������ջ�Ŀ���<br>���������Ժ�������˵��</p>
-<p>constexpr������<br>�����ڳ�������ʽ�ĺ���<br>����������ʽ</p>
-<h3 id="6-5-3-���԰���"><a href="#6-5-3-���԰���" class="headerlink" title="6.5.3 ���԰���"></a>6.5.3 ���԰���</h3><p>assertԤ������<br>assert(expr);<br>�������ʽΪ�٣��������Ϣ����ֹ����</p>
-<h2 id="6-7-����ָ��"><a href="#6-7-����ָ��" class="headerlink" title="6.7 ����ָ��"></a>6.7 ����ָ��</h2><p>bool func(const string &amp;,const string &amp;);</p>
-<p>ָ��ú����ĺ���ָ�룺<br>bool (*pf)(const string &amp;,const string &amp;);<br>�β��б����ֳ�pfָ����Ǻ���</p>
-<p>�����ǰѺ�������Ϊһ��ֵʹ��ʱ���ú����Զ���ת����ָ�롣<br>��������ʡ��ȡ��ַ��</p>
-<p>���غ�����ָ��<br>void ff(int*);<br>void ff(unsigned int);</p>
+<p>const_cast可用于重载函数 去掉const性质<br>实现：当实参不是常量时，返回值也不是常量</p>
+<p>在不同的作用域（函数体内部也算是作用域）中无法重载函数名</p>
+<h3 id="6-5-1-默认实参"><a href="#6-5-1-默认实参" class="headerlink" title="6.5.1 默认实参"></a>6.5.1 默认实参</h3><p>某些函数的形参，在函数的很多次调用中都被赋予一个相同的值。<br>缺省值只能在右侧</p>
+<h3 id="6-5-2-内联函数"><a href="#6-5-2-内联函数" class="headerlink" title="6.5.2 内联函数"></a>6.5.2 内联函数</h3><p>避免函数调用的开销</p>
+<p>编译过程中直接进行替换<br>省去了函数调用栈的开销<br>编译器可以忽略内联说明</p>
+<p>constexpr函数：<br>能用于常量表达式的函数<br>即常量表达式</p>
+<h3 id="6-5-3-调试帮助"><a href="#6-5-3-调试帮助" class="headerlink" title="6.5.3 调试帮助"></a>6.5.3 调试帮助</h3><p>assert预处理宏<br>assert(expr);<br>如果表达式为假，则输出信息并终止程序</p>
+<h2 id="6-7-函数指针"><a href="#6-7-函数指针" class="headerlink" title="6.7 函数指针"></a>6.7 函数指针</h2><p>bool func(const string &amp;,const string &amp;);</p>
+<p>指向该函数的函数指针：<br>bool (*pf)(const string &amp;,const string &amp;);<br>形参列表体现出pf指向的是函数</p>
+<p>当我们把函数名作为一个值使用时，该函数自动地转换成指针。<br>甚至可以省略取地址符</p>
+<p>重载函数的指针<br>void ff(int*);<br>void ff(unsigned int);</p>
 <p>void (*pf1)(unsigned int) &#x3D; ff;</p>
-<p>����ָ���β�<br>���ܶ��庯�����͵��βΣ������βο�����ָ������ָ��</p>
-<h1 id="������-��"><a href="#������-��" class="headerlink" title="������ ��"></a>������ ��</h1><p>��Ļ���˼���� <em><strong>���ݳ���</strong></em> �� <em><strong>��װ</strong></em>��<br>���ݳ��������ڽӿں�ʵ�ַ��롣<br>��Ľӿڰ����û�����ִ�еĲ���;���ʵ�ְ���������ݳ�Ա������ӿ�ʵ�ֵĺ����弰����������ĸ���˽�к�����</p>
-<p>��װʵ������Ľӿں�ʵ�ֵķ��룬��װ�����������ʵ��ϸ�ڡ�<br>����û�ֻ��ʹ�ýӿڶ��޷�����ʵ�ֲ��֡�</p>
-<p>*this��������ִ�иú����Ķ���</p>
-<h3 id="7-1-4-���캯��"><a href="#7-1-4-���캯��" class="headerlink" title="7.1.4 ���캯��"></a>7.1.4 ���캯��</h3><p>ֻҪ��Ķ��󱻴������ͻ�ִ�й��캯����<br>������const�ģ����캯����const����Ĺ�������п�������д��ֵ����Ϊֱ�����캯����ɳ�ʼ�����̣������������ȡ�ó������ԡ�</p>
-<p>Ĭ�Ϲ��캯������ȱ�ݵģ�û�и�����Ա��ֵ</p>
-<p>*** ��ʼֵ�б� ***<br>Sales_data(const std::string &amp;s,unsigned n,double p):book(s),units_sold(n),revenue(p*n) {}</p>
-<p>�ֲ�������ڴ������Ŀ����ʱ������<br>ʹ��vector����string�����ܱ��������ͷ��ڴ�����ĸ�����</p>
-<p>�����ݳ�Ա�ķ���Ȩ�����private�������޷����ʣ����޸�����Ľӿڣ��û����������ı䣬����Ҳ���Է�ֹ�û���ԭ��������ݱ��ƻ���</p>
-<p>���������ڲ��ĳ�Ա�����Զ�inline<br>�����ϼ����˻��:�������õĿ���(���callָ������ֳ�:��ѹ��ջ�����ݶ���ջ)<br>���һ��չ������Ⱥ��滻���������Դ�������������������ͣ������滻���ᣬ�а�ȫ����</p>
-<p>mutable�ؼ��֣��������޸����ĳ�����ݳ�Ա������һ���ɱ����ݳ�Ա��������const����ĳ�Ա����</p>
-<p>�����ݳ�Ա�ĳ�ʼֵ<br>�ṩ���ڳ�ʼֵ������’&#x3D;’���߻����ű�ʾ</p>
-<p>���Ը��ݶ����Ƿ���const���غ���</p>
-<h3 id="7-3-3-������"><a href="#7-3-3-������" class="headerlink" title="7.3.3 ������"></a>7.3.3 ������</h3><p>ǰ�����������������������</p>
-<h2 id="7-4-���������"><a href="#7-4-���������" class="headerlink" title="7.4 ���������"></a>7.4 ���������</h2><p>������������⣬��ͨ�����ݺͺ�����Աֻ���ɶ������û���ָ��ʹ�ó�Ա��������������ʡ�</p>
-<p>ע�⣺������ڲ��ĳ�Աʹ��������������е�ĳ�����֣��������ִ���һ�����ͣ����಻����֮�����¶�������֡�</p>
-<p>�������Ķ���ͨ������Ŀ�ʼ����ȷ������ʹ�ø����͵ĳ�Ա�������������Ķ���֮��</p>
-<h2 id="7-5-���캯����̽"><a href="#7-5-���캯����̽" class="headerlink" title="7.5 ���캯����̽"></a>7.5 ���캯����̽</h2><p>const�������ñ����ʼ��</p>
-<p>��ʼ���͸�ֵ������ڵײ��Ч�����⣬ǰ��ֱ�ӳ�ʼ���������ȳ�ʼ���ٸ�ֵ</p>
-<p>X(int val):j(val),i(j){}    &#x2F;&#x2F; ʵ�����ȳ�ʼ��i���ٳ�ʼ��j</p>
-<p>д���������ã�i (val),j(val)</p>
-<h3 id="7-5-2-ί�й��캯��"><a href="#7-5-2-ί�й��캯��" class="headerlink" title="7.5.2 ί�й��캯��"></a>7.5.2 ί�й��캯��</h3><p>һ��ί�й��캯��ʹ������������������캯��ִ�����Լ��ĳ�ʼ������</p>
-<p>A obj();    &#x2F;&#x2F; �������Ǻ������Ƕ���</p>
-<h3 id="7-5-4-��ʽ��������ת��"><a href="#7-5-4-��ʽ��������ת��" class="headerlink" title="7.5.4 ��ʽ��������ת��"></a>7.5.4 ��ʽ��������ת��</h3><p>ֻ����һ������ת��<br>string n &#x3D; “999”;<br>item.combine(n);</p>
-<p>����item.combine(string(“999”));</p>
-<p>��Ҫ����ʽת���ĳ����������У�����ͨ�������캯������Ϊexplicit��ֹ��ʽ����</p>
-<p>explicit���캯��ֻ������ֱ�ӳ�ʼ��</p>
-<h3 id="7-5-5-�ۺ���"><a href="#7-5-5-�ۺ���" class="headerlink" title="7.5.5 �ۺ���"></a>7.5.5 �ۺ���</h3><p>��ʾ����ֱ�ӷ��ʳ�Ա�����Ҿ�������ĳ�ʼ���﷨��ʽ</p>
-<p>constexpr���캯����������constexpr����</p>
-<h2 id="7-6-��l�̬��Ա"><a href="#7-6-��l�̬��Ա" class="headerlink" title="7.6 ��ľ�̬��Ա"></a>7.6 ��ľ�̬��Ա</h2><p>static �ؼ���ʹ����ĳ�Ա���������һ�𣨶��Ƕ���<br>��ľ�̬��Աʵ���ϴ洢���κζ���֮�⣬������thisָ��<br>��������Ĺ��캯����ʼ��</p>
+<p>函数指针形参<br>不能定义函数类型的形参，但是形参可以是指向函数的指针</p>
+<h1 id="第七章-类"><a href="#第七章-类" class="headerlink" title="第七章 类"></a>第七章 类</h1><p>类的基本思想是 <em><strong>数据抽象</strong></em> 和 <em><strong>封装</strong></em>。<br>数据抽象依赖于接口和实现分离。<br>类的接口包括用户所能执行的操作;类的实现包括类的数据成员、负责接口实现的函数体及定义类所需的各种私有函数。</p>
+<p>封装实现了类的接口和实现的分离，封装后的类隐藏了实现细节。<br>类的用户只能使用接口而无法访问实现部分。</p>
+<p>*this代表的是执行该函数的对象</p>
+<h3 id="7-1-4-构造函数"><a href="#7-1-4-构造函数" class="headerlink" title="7.1.4 构造函数"></a>7.1.4 构造函数</h3><p>只要类的对象被创建，就会执行构造函数。<br>不能是const的，构造函数在const对象的构造过程中可以向其写入值，因为直到构造函数完成初始化过程，对象才能真正取得常量属性。</p>
+<p>默认构造函数是有缺陷的：没有赋给成员初值</p>
+<p>*** 初始值列表 ***<br>Sales_data(const std::string &amp;s,unsigned n,double p):book(s),units_sold(n),revenue(p*n) {}</p>
+<p>局部对象会在创建它的块结束时被销毁<br>使用vector或者string的类能避免分配和释放内存带来的复杂性</p>
+<p>把数据成员的访问权限设成private，外层就无法访问，当修改了类的接口，用户代码就无需改变，而且也可以防止用户的原因造成数据被破坏。</p>
+<p>定义在类内部的成员函数自动inline<br>本质上减少了汇编:函数调用的开销(汇编call指令、清理现场:将压入栈的数据都出栈)<br>像宏一样展开，相比宏替换，编译器对待内联函数会检查参数类型，而宏替换不会，有安全隐患</p>
+<p>mutable关键字，用于能修改类的某个数据成员，声明一个可变数据成员（即便是const对象的成员）。</p>
+<p>类数据成员的初始值<br>提供类内初始值必须以’&#x3D;’或者花括号表示</p>
+<p>可以根据对象是否是const重载函数</p>
+<h3 id="7-3-3-类类型"><a href="#7-3-3-类类型" class="headerlink" title="7.3.3 类类型"></a>7.3.3 类类型</h3><p>前向声明：先声明类而不定义</p>
+<h2 id="7-4-类的作用域"><a href="#7-4-类的作用域" class="headerlink" title="7.4 类的作用域"></a>7.4 类的作用域</h2><p>在类的作用域外，普通的数据和函数成员只能由对象、引用或者指针使用成员访问运算符来访问。</p>
+<p>注意：如果类内部的成员使用了外层作用域中的某个名字，而该名字代表一种类型，则类不能在之后重新定义该名字。</p>
+<p>类型名的定义通常在类的开始处，确保所有使用该类型的成员都出现在类名的定义之后。</p>
+<h2 id="7-5-构造函数再探"><a href="#7-5-构造函数再探" class="headerlink" title="7.5 构造函数再探"></a>7.5 构造函数再探</h2><p>const或者引用必须初始化</p>
+<p>初始化和赋值差别在于底层的效率问题，前者直接初始化，后者先初始化再赋值</p>
+<p>X(int val):j(val),i(j){}    &#x2F;&#x2F; 实际上先初始化i，再初始化j</p>
+<p>写成这样更好：i (val),j(val)</p>
+<h3 id="7-5-2-委托构造函数"><a href="#7-5-2-委托构造函数" class="headerlink" title="7.5.2 委托构造函数"></a>7.5.2 委托构造函数</h3><p>一个委托构造函数使用它所属类的其他构造函数执行它自己的初始化过程</p>
+<p>A obj();    &#x2F;&#x2F; 声明的是函数而非对象</p>
+<h3 id="7-5-4-隐式的类类型转换"><a href="#7-5-4-隐式的类类型转换" class="headerlink" title="7.5.4 隐式的类类型转换"></a>7.5.4 隐式的类类型转换</h3><p>只允许一步类型转换<br>string n &#x3D; “999”;<br>item.combine(n);</p>
+<p>或者item.combine(string(“999”));</p>
+<p>在要求隐式转换的程序上下文中，可以通过将构造函数声明为explicit阻止隐式构造</p>
+<p>explicit构造函数只能用于直接初始化</p>
+<h3 id="7-5-5-聚合类"><a href="#7-5-5-聚合类" class="headerlink" title="7.5.5 聚合类"></a>7.5.5 聚合类</h3><p>表示可以直接访问成员、并且具有特殊的初始化语法形式</p>
+<p>constexpr构造函数用于生成constexpr对象</p>
+<h2 id="7-6-类的静态成员"><a href="#7-6-类的静态成员" class="headerlink" title="7.6 类的静态成员"></a>7.6 类的静态成员</h2><p>static 关键字使得类的成员与类关联在一起（而非对象）<br>类的静态成员实际上存储在任何对象之外，不包含this指针<br>不是由类的构造函数初始化</p>
 <p>eg double r;<br>r &#x3D; Account::rate();</p>
-<h1 id="�ڰ���-IO��"><a href="#�ڰ���-IO��" class="headerlink" title="�ڰ��� IO��"></a>�ڰ��� IO��</h1><h1 id="�ھ���-˳������"><a href="#�ھ���-˳������" class="headerlink" title="�ھ��� ˳������"></a>�ھ��� ˳������</h1><h1 id="��ʮ����-��̬�ڴ�"><a href="#��ʮ����-��̬�ڴ�" class="headerlink" title="��ʮ���� ��̬�ڴ�"></a>��ʮ���� ��̬�ڴ�</h1><p>�������ƣ�<br>13.1 ��������ֵ������</p>
-<p>13.2 �������ƺ���Դ����</p>
+<h1 id="第八章-IO库"><a href="#第八章-IO库" class="headerlink" title="第八章 IO库"></a>第八章 IO库</h1><h1 id="第九章-顺序容器"><a href="#第九章-顺序容器" class="headerlink" title="第九章 顺序容器"></a>第九章 顺序容器</h1><h1 id="第十二章-动态内存"><a href="#第十二章-动态内存" class="headerlink" title="第十二章 动态内存"></a>第十二章 动态内存</h1><p>拷贝控制：<br>13.1 拷贝、赋值与销毁</p>
+<p>13.2 拷贝控制和资源管理</p>
 
       
     </div>
@@ -1216,7 +1216,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1256,12 +1256,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">15 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
