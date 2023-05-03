@@ -297,7 +297,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/04/15/Cxx_Primer/" class="post-title-link" itemprop="url">Cxx_Primer</a>
+            <a href="/2023/04/15/Cxx_Primer/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -306,19 +306,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-04-15 21:45:44 / 修改时间：21:59:54" itemprop="dateCreated datePublished" datetime="2023-04-15T21:45:44+08:00">2023-04-15</time>
+              <time title="创建时间：2023-04-15 21:45:44" itemprop="dateCreated datePublished" datetime="2023-04-15T21:45:44+08:00">2023-04-15</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
                 </span>
-            </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-03 21:16:47" itemprop="dateModified" datetime="2023-05-03T21:16:47+08:00">2023-05-03</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -326,14 +323,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.9k</span>
+              <span>20k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
+              <span>18 分钟</span>
             </span>
 
         </div>
@@ -484,8 +481,182 @@
 <p>constexpr构造函数用于生成constexpr对象</p>
 <h2 id="7-6-类的静态成员"><a href="#7-6-类的静态成员" class="headerlink" title="7.6 类的静态成员"></a>7.6 类的静态成员</h2><p>static 关键字使得类的成员与类关联在一起（而非对象）<br>类的静态成员实际上存储在任何对象之外，不包含this指针<br>不是由类的构造函数初始化</p>
 <p>eg double r;<br>r &#x3D; Account::rate();</p>
-<h1 id="第八章-IO库"><a href="#第八章-IO库" class="headerlink" title="第八章 IO库"></a>第八章 IO库</h1><h1 id="第九章-顺序容器"><a href="#第九章-顺序容器" class="headerlink" title="第九章 顺序容器"></a>第九章 顺序容器</h1><h1 id="第十二章-动态内存"><a href="#第十二章-动态内存" class="headerlink" title="第十二章 动态内存"></a>第十二章 动态内存</h1><p>拷贝控制：<br>13.1 拷贝、赋值与销毁</p>
-<p>13.2 拷贝控制和资源管理</p>
+<h1 id="第八章-IO库"><a href="#第八章-IO库" class="headerlink" title="第八章 IO库"></a>第八章 IO库</h1><h1 id="第九章-顺序容器"><a href="#第九章-顺序容器" class="headerlink" title="第九章 顺序容器"></a>第九章 顺序容器</h1><h1 id="第十章-泛型算法"><a href="#第十章-泛型算法" class="headerlink" title="第十章 泛型算法"></a>第十章 泛型算法</h1><h1 id="第十二章-动态内存"><a href="#第十二章-动态内存" class="headerlink" title="第十二章 动态内存"></a>第十二章 动态内存</h1><p>为了更安全地使用动态对象，使用智能指针<br>当一个对象应该被释放时，指向它的智能指针可以确保自动地释放它</p>
+<p>*** 静态内存用来保存局部static对象、类static数据成员以及定义在任何函数之外的变量 ***<br>*** 栈内存用来保存定义在函数内的非static对象 ***<br>分配在这两处的对象由编译器自动创建和销毁</p>
+<p>堆区域：动态分配<br>new delete</p>
+<h3 id="12-1-1-shared-ptr类"><a href="#12-1-1-shared-ptr类" class="headerlink" title="12.1.1 shared_ptr类"></a>12.1.1 shared_ptr类</h3><p>shared_ptr&lt;list<int>&gt;p2;</int></p>
+<p>使用make_shared来分配和使用动态内存<br>shared_ptr<int>p3 &#x3D; make_shared<int>(42);</int></int></p>
+<p>拷贝一个shared_ptr，引用计数会递增。</p>
+<p>用局部变量来保存shared_ptr，离开作用域就被销毁。<br>在return一个shared_ptr时，引用计数递增。</p>
+<p>需要注意的是销毁程序不再需要的shared_ptr，否则就浪费内存了，有这么一种情况：将shared_ptr存放在一个容器中，需要使用erase删除不再需要的对象。</p>
+<h3 id="12-1-2-直接管理内存"><a href="#12-1-2-直接管理内存" class="headerlink" title="12.1.2 直接管理内存"></a>12.1.2 直接管理内存</h3><p>int *pi &#x3D; new int;<br>int *pi &#x3D; new int(1024);</p>
+<p>动态分配的const对象<br>const int *pci &#x3D; new const int(1024);</p>
+<p>当内存耗尽，new会失效，抛出一个bad_alloc的异常。</p>
+<p>int *p2 &#x3D; new (nothrow) int;</p>
+<p>释放动态内存<br>delete p;<br>delete的指针必须指向动态分配的内存&#x2F;空指针，否则这种行为就是未定义的。</p>
+<p>谨防内存泄漏：忘记delete</p>
+<p>空悬指针：被delete的指针<br>可以赋nullptr，表明指针不指向任何对象。</p>
+<p>shared_ptr<int> p2(new int (42));<br>必须使用直接初始化<br>因为不允许内置指针到智能指针间的隐式转换</int></p>
+<p>get方法将指针的访问权限传递给代码，只有确定代码不会delete指针的情况下，才能使用get</p>
+<p>智能指针可以确保即使发生异常，也能释放</p>
+<p>不要delete get()返回的指针，因为智能指针并不知道被delete了，会出现重复析构。</p>
+<h3 id="12-1-5-unique-ptr"><a href="#12-1-5-unique-ptr" class="headerlink" title="12.1.5 unique_ptr"></a>12.1.5 unique_ptr</h3><p>一个unique_ptr“拥有”它所指向的对象。<br>某个时刻只能有一个unique1_ptr指向一个给定对象。</p>
+<p>unique_ptr<int>p2(new int(42));<br>不支持拷贝、赋值</int></p>
+<p>转移unique_ptr所有权：<br>unique_ptr<string>p2(p1.release());</string></p>
+<p>可以拷贝或赋值一个将要被销毁的unique_ptr<br>举例：从函数返沪一个unique_ptr<br>因为编译器知道要返回的对象将要被销毁，编译器会执行一种特殊的拷贝（见十三章）</p>
+<h3 id="12-1-6-weak-ptr"><a href="#12-1-6-weak-ptr" class="headerlink" title="12.1.6 weak_ptr"></a>12.1.6 weak_ptr</h3><p>use_count()方法，返回引用计数</p>
+<h3 id="allocator类"><a href="#allocator类" class="headerlink" title="allocator类"></a>allocator类</h3><p>用于将内存分配和对象构造分离</p>
+<p>allocator<string>alloc;<br>auto const p &#x3D; alloc.allocate(n);<br>&#x2F;&#x2F; 为n个string分配了内存</string></p>
+<p>allocator分配的内存是未构造的，按需要在此内存中构造对象<br>auto p &#x3D; q; &#x2F;&#x2F; q指向最后构造的元素之后的位置<br>alloc.construct(q++);   &#x2F;&#x2F; *q为空字符串<br>alloc.construct(q++,10,’c’);    &#x2F;&#x2F; *q为cccccccccc</p>
+<h1 id="第十三章-拷贝控制"><a href="#第十三章-拷贝控制" class="headerlink" title="第十三章 拷贝控制"></a>第十三章 拷贝控制</h1><p>类内可以定义 <em><strong>拷贝控制操作</strong></em>：拷贝构造、拷贝赋值、移动构造、移动赋值、析构<br>这些操作若未手动定义，编译器会自动定义（但是可能并非我们想要的）</p>
+<h2 id="13-1-拷贝、赋值与销毁"><a href="#13-1-拷贝、赋值与销毁" class="headerlink" title="13.1 拷贝、赋值与销毁"></a>13.1 拷贝、赋值与销毁</h2><h3 id="13-1-1-拷贝构造函数"><a href="#13-1-1-拷贝构造函数" class="headerlink" title="13.1.1 拷贝构造函数"></a>13.1.1 拷贝构造函数</h3><p>class Foo{<br>    Foo(const Foo&amp;);    &#x2F;&#x2F; 拷贝构造函数 入参必须为引用<br>}</p>
+<p>拷贝构造不应该是explicit的，因为是隐式地使用</p>
+<h4 id="合成拷贝构造函数"><a href="#合成拷贝构造函数" class="headerlink" title="合成拷贝构造函数"></a>合成拷贝构造函数</h4><p>内置类型的成员直接拷贝、类类型的则需要调用拷贝构造函数</p>
+<h4 id="拷贝初始化"><a href="#拷贝初始化" class="headerlink" title="拷贝初始化"></a>拷贝初始化</h4><p>string dots(10,’.’);    &#x2F;&#x2F; 直接初始化<br>string s(dots); &#x2F;&#x2F; 直接初始化 直接函数匹配调用了拷贝构造函数，所以它是直接初始化，而不是拷贝初始化<br>string s2 &#x3D; dots;   &#x2F;&#x2F; 拷贝初始化<br>string null_book &#x3D; “9-999-9”;   &#x2F;&#x2F; 拷贝<br>string nines &#x3D; string(100,’9’); &#x2F;&#x2F; 拷贝</p>
+<p><em><strong>直接初始化</strong></em>实际上是编译器使用函数匹配选择构造函数<br><em><strong>拷贝初始化</strong></em>实际上是编译器将有猜测运算对象拷贝到正在创建的对象中（可能还会涉及类型转换）<br>C++语言标准规定： <em><strong>拷贝初始化</strong></em>应该是先调用对应的构造函数创建一个 <em><strong>临时对象</strong></em> ，即额外创建对象<br>拷贝初始化有时会通过移动构造函数完成</p>
+<p>拷贝初始化发生在：<br>对象作为实参传递给非引用类型的形参<br>返回类型为非引用类型的函数 返回一个对象<br>{}列表初始化一个数组中的元素、或一个聚合类中的成员</p>
+<p>初始化标准库容器或者调用insert或push时，容器对齐元素进行拷贝初始化<br>emplace时直接初始化</p>
+<p>拷贝构造函数的参数必须是引用类型–&gt;因为如果不是引用，调用永远都不会成功，为了调用拷贝构造函数，我们必须拷贝它的实参，为了拷贝实参，又必须调用拷贝构造函数</p>
+<p>如果用explicit声明构造函数，拷贝&#x2F;直接初始化需要有选择</p>
+<h3 id="13-1-2-拷贝赋值运算符"><a href="#13-1-2-拷贝赋值运算符" class="headerlink" title="13.1.2 拷贝赋值运算符"></a>13.1.2 拷贝赋值运算符</h3><h4 id="重载赋值运算符"><a href="#重载赋值运算符" class="headerlink" title="重载赋值运算符"></a>重载赋值运算符</h4><p>赋值运算符实质就是一个名为operator&#x3D;的函数<br>Foo operator&#x3D;(const Foo&amp;);</p>
+<h4 id="合成拷贝赋值运算符"><a href="#合成拷贝赋值运算符" class="headerlink" title="合成拷贝赋值运算符"></a>合成拷贝赋值运算符</h4><p>编译器会为未定义自己的拷贝赋值运算符的类定义一个 <em><strong>合成拷贝运算符</strong></em></p>
+<h3 id="13-1-3-析构函数"><a href="#13-1-3-析构函数" class="headerlink" title="13.1.3 析构函数"></a>13.1.3 析构函数</h3><p>用于释放资源，销毁对象的非static数据成员<br>构造函数中：先初始化成员，再执行函数体<br>而析构函数恰恰相反<br>销毁内置类型成员什么都不需要做</p>
+<p>隐式销毁一个内置指针类型的成员不会delete它所指向的对象</p>
+<h4 id="什么时候调用析构函数"><a href="#什么时候调用析构函数" class="headerlink" title="什么时候调用析构函数"></a>什么时候调用析构函数</h4><p>1. 变量离开其作用域时被销毁<br>2. 对象被销毁时，其成员也被销毁<br>3. 容器被销毁时，元素被销毁<br>4. 动态分配的对象，指向它的指针应用delete运算符时被销毁<br>5. 对于临时对象，当创建完它的完整表达式结束时被销毁</p>
+<p>也就是执行到’}’，退出局部作用域，进行调用析构函数，以及引用计数减一等操作</p>
+<h4 id="合成析构函数"><a href="#合成析构函数" class="headerlink" title="合成析构函数"></a>合成析构函数</h4><p>编译器定义的<br>析构函数体自身并不直接销毁成员<br>成员是在析构函数体之后 <em><strong>隐含的析构阶段</strong></em>中被销毁的</p>
+<h3 id="13-1-4-三-x2F-五法则"><a href="#13-1-4-三-x2F-五法则" class="headerlink" title="13.1.4 三&#x2F;五法则"></a>13.1.4 三&#x2F;五法则</h3><p><em><strong>如果一个类需要一个析构函数（显示地定义出来），那么也需要拷贝构造函数和一个拷贝赋值运算符</strong></em></p>
+<p>举例：<br>类HasPtr在构造函数中分配内存，需要在析构函数中delete一个指针数据成员<br>采用合成的拷贝构造和拷贝赋值运算符是错误的，因为这会导致简单拷贝指针成员，意味着多个HasPtr对象可能指向相同的内存，导致多次销毁（类的指针成员）。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">HasPtr</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">HasPtr</span>(<span class="type">const</span> std::string &amp;s = std::<span class="built_in">string</span>()):<span class="built_in">ps</span>(<span class="keyword">new</span> std::<span class="built_in">string</span>(s)),<span class="built_in">i</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    std::string *ps;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 为了提供默认参数值，创建了一个匿名的、空字符串的std::string对象作为默认值，也就是说如果没有传入实参，就用这个空字符初始化</span></span><br><span class="line"></span><br><span class="line"><span class="function">HasPtr <span class="title">f</span><span class="params">(HasPtr hp)</span></span>&#123;</span><br><span class="line">    HasPtr ret = hp;    <span class="comment">// 拷贝了hp对象</span></span><br><span class="line">    <span class="keyword">return</span> ret; <span class="comment">// 返回时，ret，hp对象都被销毁</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">HasPtr <span class="title">p</span><span class="params">(<span class="string">&quot;some values&quot;</span>)</span></span>;    <span class="comment">// 构造p对象</span></span><br><span class="line"><span class="built_in">f</span>(p);   <span class="comment">// 当f执行完时，p.ps指向的内存被释放（因为是临时变量）</span></span><br><span class="line"><span class="function">HasPtr <span class="title">q</span><span class="params">(p)</span></span>;    <span class="comment">// p和q都指向无效内存</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>需要拷贝操作的类也需要赋值操作，不一定需要自定义析构函数</p>
+<p><em><strong>如果一个类需要一个拷贝构造函数，几乎可以肯定它也需要一个拷贝赋值运算符</strong></em></p>
+<h3 id="3-15-使用-x3D-default"><a href="#3-15-使用-x3D-default" class="headerlink" title="3.15 使用&#x3D;default"></a>3.15 使用&#x3D;default</h3><p>显式要求编译器生成合成的版本</p>
+<h3 id="13-1-6-阻止拷贝"><a href="#13-1-6-阻止拷贝" class="headerlink" title="13.1.6 阻止拷贝"></a>13.1.6 阻止拷贝</h3><p>有些类必须阻止拷贝或者赋值<br>iostream类组织了拷贝，以避免多个对象写入或读取相同的IO缓冲<br>因此需要 &#x3D; delete<br>析构函数不能删除<br>如果删除了析构函数，则不能把对象定义在栈上了，但是可以定义在堆上，但同样无法释放。</p>
+<p>如果一个类有数据成员不能默认构造、拷贝、复制或销毁  则对应的成员函数被定义为删除</p>
+<h4 id="private拷贝控制"><a href="#private拷贝控制" class="headerlink" title="private拷贝控制"></a>private拷贝控制</h4><p>private声明（不需定义）可以阻止友元和成员函数进行拷贝<br>如果试图拷贝则会在编译时标记为错误<br>成员函数或友元函数中的拷贝操作会导致链接错误</p>
+<h2 id="13-2-拷贝控制和资源管理"><a href="#13-2-拷贝控制和资源管理" class="headerlink" title="13.2 拷贝控制和资源管理"></a>13.2 拷贝控制和资源管理</h2><p>通常管理类外资源的类必须定义拷贝控制成员</p>
+<h3 id="13-2-1-行为像值的类"><a href="#13-2-1-行为像值的类" class="headerlink" title="13.2.1 行为像值的类"></a>13.2.1 行为像值的类</h3><h4 id="类值拷贝赋值运算符"><a href="#类值拷贝赋值运算符" class="headerlink" title="类值拷贝赋值运算符"></a>类值拷贝赋值运算符</h4><p>赋值运算符通常组合了析构和构造<br>因为会销毁左侧运算对象的资源 从右侧运算对象拷贝数据</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">HasPtr&amp; HasPtr::<span class="keyword">operator</span>=(<span class="type">const</span> HasPtr &amp;rhs)&#123;</span><br><span class="line">    <span class="keyword">auto</span> newp = <span class="keyword">new</span> <span class="built_in">string</span>(*rhs.ps);</span><br><span class="line">    <span class="comment">// 拷贝底层string</span></span><br><span class="line">    <span class="keyword">delete</span> ps;  <span class="comment">// 释放旧内存</span></span><br><span class="line">    ps = newp;  <span class="comment">// 拷贝数据</span></span><br><span class="line">    i = rhs.i;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先将右侧对象拷贝到局部对象，再销毁左侧对象是安全的</span></span><br></pre></td></tr></table></figure>
+
+<p>需要防范 <em><strong>自赋值操作</strong></em><br>要保证一个对象赋予它自身，也要正确工作<br>因为两个指针可能指向同一块内存</p>
+<h3 id="13-2-2-定义行为像指针的类"><a href="#13-2-2-定义行为像指针的类" class="headerlink" title="13.2.2 定义行为像指针的类"></a>13.2.2 定义行为像指针的类</h3><p>要定义拷贝构造函数和拷贝赋值运算符<br>使用shared_ptr<br>引用计数的计数器保存在动态内存中，当拷贝或赋值对象时，拷贝指向计数器的指针，目的是让副本和原对象都指向相同的计数器</p>
+<p>PS: std::size_t<br>范围是目标平台下最大可能的数组尺寸</p>
+<h2 id="13-3-交换操作"><a href="#13-3-交换操作" class="headerlink" title="13.3 交换操作"></a>13.3 交换操作</h2><p>目的是减少拷贝</p>
+<h2 id="13-5-动态内存管理类"><a href="#13-5-动态内存管理类" class="headerlink" title="13.5 动态内存管理类"></a>13.5 动态内存管理类</h2><p>vector原理：连续内存 若无空间则重新分配，把旧元素移动到新元素，释放旧空间</p>
+<h4 id="移动构造函数和std-move"><a href="#移动构造函数和std-move" class="headerlink" title="移动构造函数和std::move"></a>移动构造函数和std::move</h4><p>#include<utility><br>std::move</utility></p>
+<h2 id="13-6-对象移动"><a href="#13-6-对象移动" class="headerlink" title="13.6 对象移动"></a>13.6 对象移动</h2><p>移动而非拷贝对象 拷贝是不必要的，或者有些类包含不能被共享的资源（如指针或IO缓冲）</p>
+<h3 id="13-6-1-右值引用"><a href="#13-6-1-右值引用" class="headerlink" title="13.6.1 右值引用"></a>13.6.1 右值引用</h3><p><em><strong>rvalue reference</strong></em><br>用于支持移动操作<br>即必须绑定到右值的引用<br>只能绑定到一个将要销毁的对象<br>本质上就是某对象的另一个名字而已<br>不能将一个右值引用绑定到一个左值上</p>
+<p>1. 所引用的对象将要销毁<br>2. 该对象没有其他用户</p>
+<p>由于变量是左值，因此不能将右值引用绑定到一个右值引用类型的变量上<br>int &amp;&amp;rr1 &#x3D; 42;<br>int &amp;&amp;rr2 &#x3D; rr1;    &#x2F;&#x2F; 错误</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> &amp;&amp;rr3 = std::<span class="built_in">move</span>(rr1);</span><br><span class="line"><span class="comment">//  将一个左值转换为对象的右值引用类型</span></span><br><span class="line"><span class="comment">// 获得绑定到左值的右值引用</span></span><br></pre></td></tr></table></figure>
+<p>move意味着：我们有rr1这个左值，但我们希望像一个右值一样处理它，除了对rr1赋值或者销毁外，不再使用它</p>
+<p>可以销毁移后源对象 赋值 但不能使用一个移后源对象的值</p>
+<h3 id="13-6-2-移动构造函数和移动赋值运算符"><a href="#13-6-2-移动构造函数和移动赋值运算符" class="headerlink" title="13.6.2 移动构造函数和移动赋值运算符"></a>13.6.2 移动构造函数和移动赋值运算符</h3><p>移动构造不分配任何新内存 “窃取”资源而非拷贝（因而不抛出异常）</p>
+<p>PS：移动操作时，一个对象的资源所有权从源对象转移到目标对象<br>底层使用指针或引用，通常将源对象的数据成员指针设置为null，以避免在析构源对象时释放已经转移的资源<br>移动赋值运算符中，先释放目标对象的资源，然后将源对象的资源指针赋给目标对象的资源指针</p>
+<p>一旦资源完成移动，源对象必须不再指向被移动的资源</p>
+<p>移后源对象必须可析构</p>
+<p>若类成员定义了自己的拷贝构造函数且未定义移动构造函数，则移动构造被定义为delete</p>
+<p>右值可以作为拷贝构造函数的入参</p>
+<p>移动迭代器</p>
+<p>不要随意使用移动，因为移后源对象具有不确定的状态，必须确认移后源对象没有其他用户</p>
+<h3 id="13-6-3-右值引用和成员函数"><a href="#13-6-3-右值引用和成员函数" class="headerlink" title="13.6.3 右值引用和成员函数"></a>13.6.3 右值引用和成员函数</h3><p>参数列表后加&amp;，表示引用限定符<br>&amp;表示this可以指向左值，&amp;&amp;则是右值<br>Foo anotherMem() const &amp;;</p>
+<p>PS：移动语义是把左值转换成右值，转移值的所有权，移后源变量不再拥有原始值的所有权。（但由于C++标准允许程序员对临时对象优化、延迟销毁等，因而可以赋值）减少了拷贝。</p>
+<h1 id="第十六章-模板与泛型编程"><a href="#第十六章-模板与泛型编程" class="headerlink" title="第十六章 模板与泛型编程"></a>第十六章 模板与泛型编程</h1><p>泛型编程：编译时获知类型</p>
+<h3 id="16-1-1-函数模板"><a href="#16-1-1-函数模板" class="headerlink" title="16.1.1 函数模板"></a>16.1.1 函数模板</h3><p>template<typenam t> &#x2F;&#x2F; template后是模板参数列表<br>int compare(const T &amp;v1,const T &amp;v2){<br>    if(v1 &lt; v2) return -1;<br>    if(v2 &lt; v1) return 1;<br>    return 0;<br>}</typenam></p>
+<p>使用模板时，隐式或者显式地指定模板实参，将其绑定到模板参数上</p>
+<p>*** 实例化函数模板 ***<br>compare(1,0)    &#x2F;&#x2F; 编译器会推出模板实参为int<br>编译器生成的版本被称为模板的实例</p>
+<p>*** 模板类型参数 ***<br>template <typename t> T foo(T* p)<br>{<br>    T tmp &#x3D; *p;<br>    &#x2F;&#x2F; …<br>    return tmp;<br>}</typename></p>
+<p>模板参数列表中，typename和class可以互换使用</p>
+<p>*** 非类型模板参数 ***<br>一个非类型模板参数表示一个值而非一个类型<br>非类型模板参数被 <em><strong>常量表达式</strong></em>替代<br>比如用于指定数组大小</p>
+<p><em><strong>编写类型无关的代码</strong></em><br>将函数参数设定为const的引用，**保证了函数可以用于不能拷贝的类型。</p>
+<p>只用&lt;，而不用&gt;，可以降低compare函数对要处理的类型的要求（也就是说，只需重载&lt;）</p>
+<p>如果更加追求类型无关和可移植性<br>template<typename t>int compare(const T &amp;v1,const T &amp;v2)<br>{<br>    if(less<T>()(v1,v2))    return -1;<br>    if(less<T>()(v2,v1))    return 1;<br>    return 0;<br>}</T></T></typename></p>
+<p><em><strong>模板程序应该尽量减少对实参类型的要求</strong></em></p>
+<p>只有实例化出模板的一个特定版本，编译器才会生成代码，使用而非定义模板时才会生成代码</p>
+<p>*** 函数模板和类模板成员函数的定义通常放在头文件 ***</p>
+<p>大多数编译错误在实例化期间报告<br>可以发现类型相关的错误</p>
+<h3 id="16-1-2-类模板"><a href="#16-1-2-类模板" class="headerlink" title="16.1.2 类模板"></a>16.1.2 类模板</h3><p>使用类模板必须显式地在&lt;&gt;添加信息</p>
+<p>对于一个实例化了的类模板，其成员只有在使用时才被实例化。</p>
+<p>在类模板自己的作用域中，可以直接使用模板而不提供实参。</p>
+<p>类模板外使用类模板名需要显式地指出<T></T></p>
+<h3 id="16-1-3-模板参数"><a href="#16-1-3-模板参数" class="headerlink" title="16.1.3 模板参数"></a>16.1.3 模板参数</h3><p>模板声明<br>模板声明必须包含模板参数<br>如函数参数，声明中的模板参数的名字不必与定义中相同。</p>
+<p>使用类的类型成员<br>默认情况下，c++假定通过作用域运算符访问的名字不是类型<br>如果要用模板类型参数的类型成员，就必须显式地告诉编译器该名字是一个类型<br>这需要typename关键字</p>
+<p>template<typename t><br>…<br>    return typename T::value_type();<br>容器类型中，提供初始值以进行值初始化<br>T()这样的表达式是用于显式地请求值初始化</typename></p>
+<h4 id="默认模板实参"><a href="#默认模板实参" class="headerlink" title="默认模板实参"></a>默认模板实参</h4><p>template&lt;typename T,typename F &#x3D; less<T>&gt;<br>int compare(const T &amp; v1,const T &amp;v2, F f &#x3D; F())<br>{<br>    if(f(v1,v2))    return -1;<br>    if(f(v1,v2))    return 1;<br>    return 0;<br>}</T></p>
+<p>默认模板实参less<T>，默认函数实参F()</T></p>
+<p>第二个类型参数F，表示可调用对象的类型，函数参数f，会被绑定到一个可调用对象上。</p>
+<p>默认模板参数指出：compare将使用标准库的less函数对象类，它是使用与compare一样的类型参数实例化的<br>默认函数实参指出：f将是类型F的一个默认初始化的对象</p>
+<p>当用户将该模板函数实例化时，可以提供自己的比较操作（也可以不提供）</p>
+<p>bool i &#x3D; compare(0,42); &#x2F;&#x2F; 使用less，i &#x3D; -1<br>&#x2F;&#x2F; 使用默认函数实参，类型less<T>的一个默认初始化对象<br>&#x2F;&#x2F; T为int，即less<T></T></T></p>
+<p>bool j &#x3D; compare(item1, item2, compareIsbn);<br>&#x2F;&#x2F; 传入了两个对象和一个可调用对象，该对象的返回类型必须可以转换为bool值，且接受实参类型必须与前面两个实参的类型兼容 这时的T是Sales_data类型，F被推断为compareIsbn类型</p>
+<h4 id="模板默认实参与类模板"><a href="#模板默认实参与类模板" class="headerlink" title="模板默认实参与类模板"></a>模板默认实参与类模板</h4><p>template<class t="int">class Numbers{</class></p>
+<p>}</p>
+<h3 id="16-1-4-成员模板"><a href="#16-1-4-成员模板" class="headerlink" title="16.1.4 成员模板"></a>16.1.4 成员模板</h3><p>即模板成员函数（不能是虚函数）<br>普通类可以包含模板成员函数<br>类模板也可以定义模板成员函数，二者的模板参数可以独立<br>在类外定义时就要同时为二者提供参数列表。<br>template <typename t><br>template <typename it><br>    Blob<T>::Blob(It b,It e);</T></typename></typename></p>
+<p>实例化与成员模板<br>实例化类模板的成员模板，需要同时提供二者的实参</p>
+<h3 id="16-1-5-控制实例化"><a href="#16-1-5-控制实例化" class="headerlink" title="16.1.5 控制实例化"></a>16.1.5 控制实例化</h3><p>由于在多个文件中实例化相同模板的额外开销可能很严重（因为没必要），因此需要 <em><strong>显式实例化</strong></em>。<br>例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class</span> <span class="title class_">Blog</span>&lt;string&gt;; <span class="comment">// 声明</span></span><br><span class="line"><span class="comment">// extern 意味着编译器不会在本文件生成实例化代码，因为其他位置已有非extern声明（定义）</span></span><br><span class="line"><span class="function"><span class="keyword">template</span> <span class="type">int</span> <span class="title">compare</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp;,<span class="type">const</span> <span class="type">int</span>&amp;)</span></span>;    <span class="comment">// 定义</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="16-2-模板实参推断"><a href="#16-2-模板实参推断" class="headerlink" title="16.2 模板实参推断"></a>16.2 模板实参推断</h2><h3 id="16-2-1-类型转换与模板类型参数"><a href="#16-2-1-类型转换与模板类型参数" class="headerlink" title="16.2.1 类型转换与模板类型参数"></a>16.2.1 类型转换与模板类型参数</h3><p>顶层const传递给函数模板会被忽略</p>
+<p>如果函数形参是常量引用，但是传入的是指针（来源于数组），是无法转换的。<br>将实参传递给带模板类型的函数形参时，能够自动应用的类型转换只有const转换、以及数组&#x2F;函数到指针的转换。</p>
+<p>使用相通模板参数类型的函数形参<br>compare(const T&amp;,const T&amp;)<br>long lng;<br>compare(lng,1024)  &#x2F;&#x2F; 二者类型必须相同</p>
+<p>–&gt; 可以这样<br>template&lt;typename A,typename B&gt;</p>
+<h4 id="正常类型转换用于普通函数实参"><a href="#正常类型转换用于普通函数实参" class="headerlink" title="正常类型转换用于普通函数实参"></a>正常类型转换用于普通函数实参</h4><p>template<typename t>ostream &amp; print(ostream &amp;os,const T &amp;obj){<br>}</typename></p>
+<h3 id="16-2-2-函数模板显式实参"><a href="#16-2-2-函数模板显式实参" class="headerlink" title="16.2.2 函数模板显式实参"></a>16.2.2 函数模板显式实参</h3><p>指定显式模板实参</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1,<span class="keyword">typename</span> T2,<span class="keyword">typename</span> T3&gt;</span></span><br><span class="line"><span class="function">T1 <span class="title">sum</span><span class="params">(T2,T3)</span></span>;</span><br><span class="line"><span class="comment">// 无法通过函数实参的类型推断T1的类型</span></span><br><span class="line"><span class="comment">// 必须显式指定</span></span><br><span class="line"><span class="keyword">auto</span> val3 = <span class="built_in">sum</span>&lt;<span class="type">long</span> <span class="type">long</span>&gt;(i,lng);  <span class="comment">// int long</span></span><br></pre></td></tr></table></figure>
+<p>第一个模板实参与第一个模板参数匹配，第二个实参和第二个参数匹配<br>只有最右侧参数的显式模板实参可以忽略</p>
+<h3 id="16-2-3-尾置返回类型与类型转换"><a href="#16-2-3-尾置返回类型与类型转换" class="headerlink" title="16.2.3 尾置返回类型与类型转换"></a>16.2.3 尾置返回类型与类型转换</h3><p>template <typename it><br>auto fcn(It beg,It end) -&gt; decltype(*beg)<br>因为尾置返回出现在参数列表之后，所以可以使用函数的参数</typename></p>
+<p>标准库的类型转换：type_traits<br>用于模板元编程<br>remove_reference可以去除引用，得到本身的类型<br>template <typename it><br>auto fcn2(It beg,It end) -&gt;<br>typename remove_reference&lt;decltype(*beg)&gt;::type<br>{<br>    return *beg;<br>}<br>&#x2F;&#x2F; type表示一个类型 是类的成员</typename></p>
+<h3 id="16-2-4-函数指针和实参推断"><a href="#16-2-4-函数指针和实参推断" class="headerlink" title="16.2.4 函数指针和实参推断"></a>16.2.4 函数指针和实参推断</h3><p>template <typename t>int compare(const T&amp;,const T&amp;);<br>int (*pf1)(const int&amp;,const int&amp;) &#x3D; compare;<br>&#x2F;&#x2F; 定义了指向compare的函数指针<br>&#x2F;&#x2F; pf1中参数的类型决定T的模板实参的类型</typename></p>
+<h3 id="16-2-5-模板实参推断和引用"><a href="#16-2-5-模板实参推断和引用" class="headerlink" title="16.2.5 模板实参推断和引用"></a>16.2.5 模板实参推断和引用</h3><p>从左值引用函数参数推断类型<br>当函数参数为T&amp;这种左值引用时，智能传递左值（一个变量或一个返回引用类型的表达式）</p>
+<p>如果函数参数的类型是const T&amp;，我们可以传递给它任何类型的实参：一个对象(const&#x2F;非const)、一个临时对象、一个字面常量值</p>
+<p>当一个函数参数是一个右值引用（形如T&amp;&amp;）时，<br>可以传递给它一个右值</p>
+<h4 id="引用折叠和右值引用参数"><a href="#引用折叠和右值引用参数" class="headerlink" title="引用折叠和右值引用参数"></a>引用折叠和右值引用参数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;<span class="function"><span class="type">void</span> <span class="title">f3</span><span class="params">(T&amp;&amp;)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>f3(i)   &#x2F;&#x2F; 编译器推断T的类型为int&amp;，而不是int<br>通常不能定义一个引用的引用，但是通过类型别名或者模板类型参数间接定义是可以的<br>如果我们间接创建一个引用的引用，则形成了引用折叠–&gt;引用会折叠成一个普通的左值引用类型<br>???</p>
+<p>指向模板类型参数的右值引用可以绑定到一个左值<br>我们可以将任意类型的实参传递给T&amp;&amp;类型的函数参数</p>
+<p>实际中，右值引用常用于两种情况：<br>模板转发其实参  &#x2F;   模板被重载</p>
+<h3 id="16-2-6-理解std-move"><a href="#16-2-6-理解std-move" class="headerlink" title="16.2.6 理解std::move"></a>16.2.6 理解std::move</h3><p>不能直接将一个右值引用绑定到一个左值，但可以用move获得一个绑定到左值上的右值引用</p>
+<h3 id="16-2-6-理解std-move-1"><a href="#16-2-6-理解std-move-1" class="headerlink" title="16.2.6 理解std::move"></a>16.2.6 理解std::move</h3><h4 id="它是如何定义的？"><a href="#它是如何定义的？" class="headerlink" title="它是如何定义的？"></a>它是如何定义的？</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;typenmae T&gt;</span><br><span class="line"><span class="keyword">typename</span> remove_reference&lt;T&gt;::<span class="function">type&amp;&amp; <span class="title">move</span><span class="params">(T&amp;&amp; t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">static_cast</span>&lt;<span class="keyword">typename</span> remove_reference&lt;T&gt;::type&amp;&amp;&gt;(t);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 此处的type指的是T原本的类型（本质上和remove_reference的底层实现有关，该模板类有个成员是type）</span></span><br><span class="line"><span class="comment">// 通过引用折叠，此参数可与任何类型的实参匹配（既可以给move传递左值，又可以传递右值）</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>PS：引用折叠<br>int&amp; &amp;&amp;等价于int&amp;</p>
+<h4 id="它是如何工作的？"><a href="#它是如何工作的？" class="headerlink" title="它是如何工作的？"></a>它是如何工作的？</h4><p>推断出T的类型（比如string&amp;，而非普通string）</p>
+<p>虽然不能隐式将一个左值转换为右值引用，但可以用static_cast显示地完成</p>
+<h3 id="16-2-7-转发"><a href="#16-2-7-转发" class="headerlink" title="16.2.7 转发"></a>16.2.7 转发</h3><p>需要将实参连同类型不变地转发给其他函数，需要保持被转发实参的性质（const、左值、右值）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 该模板接受一个可调用对象和另外两个参数</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> F,<span class="keyword">typename</span> T1,<span class="keyword">typename</span> T2&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">flip1</span><span class="params">(F f,T1 t1,T2 t2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">f</span>(t2,t1);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这样的模板参数没法接收引用</span></span><br></pre></td></tr></table></figure>
+<p>模板实例化后的调用：<br>void flip(void(*fcn)(int,int&amp;),int t1,int t2);<br>t1（不带引用）再传入第一个位置的函数</p>
+<p>由于使用引用参数可以保持const属性，可以将参数定义为T1&amp;&amp;，通过引用折叠保持翻转实参的左值&#x2F;右值属性</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> F,<span class="keyword">typename</span> T1,<span class="keyword">typename</span> T2&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">filp2</span><span class="params">(F f,T1 &amp;&amp;t1,T2 &amp;&amp;t2)</span></span>&#123;</span><br><span class="line">    <span class="built_in">f</span>(t2,t1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>flip2(g,i,42);<br>但是不能传递右值给filp2<br>因为传给g的是flip2中名为t2的参数，传进g的右值引用参数的实参是一个左值</p>
+<p><em><strong>std::forward</strong></em>可以保持给定实参的左值&#x2F;右值属性<br>如果实参是右值，则Type为普通类型，forward<Type>返回Type&amp;&amp;<br>如果实参是左值，则通过引用折叠，返回一个左值引用类型</Type></p>
+<h2 id="16-3-重载与模板"><a href="#16-3-重载与模板" class="headerlink" title="16.3 重载与模板"></a>16.3 重载与模板</h2><p>重载模板<br>精准匹配<br>选择更特例化的版本<br>非模板和模板版本，优先非模板</p>
+<h2 id="16-4-可变模板参数"><a href="#16-4-可变模板参数" class="headerlink" title="16.4 可变模板参数"></a>16.4 可变模板参数</h2><p>接受可变数目参数的模板函数&#x2F;模板类<br>可变数目的参数被称为 <em><strong>参数包</strong></em><br>（模板参数包&#x2F;函数参数包）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span>... Args&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">(<span class="type">const</span> T &amp;t,<span class="type">const</span> Args&amp; ...rest)</span></span>;</span><br><span class="line"><span class="comment">// foo是一个可变参数函数模板，有一个名为T的类型参数，有一个名为Args的模板参数包</span></span><br><span class="line"><span class="comment">// foo的函数参数列表包含一个const&amp;类型的参数，指向T的类型，还包含一个名为rest的函数参数包，此包表示0/多个函数参数</span></span><br></pre></td></tr></table></figure>
+<p>foo(i,str,42,d);    &#x2F;&#x2F;包中有三个参数<br>foo(“hi”);  &#x2F;&#x2F;空包</p>
+<p>可以使用sizeof运算符来得知包中元素的个数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">ostream &amp;<span class="title">print</span><span class="params">(ostream &amp;os,<span class="type">const</span> T &amp;t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> os &lt;&lt; t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 用于终止递归，并打印最后一个元素</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span>... Args&gt;</span></span><br><span class="line"><span class="function">ostream &amp;<span class="title">print</span><span class="params">(ostream &amp;os,<span class="type">const</span> T &amp;t,<span class="type">const</span> Args&amp;... rest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    os&lt;&lt; t &lt;&lt;<span class="string">&quot;,&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">print</span>(os,rest...);   <span class="comment">// 递归</span></span><br><span class="line">    <span class="comment">// 打印其他实参</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意到：</span></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">print</span>(os,rest...);</span><br><span class="line"><span class="comment">// 递归调用</span></span><br><span class="line"><span class="comment">// 只传递了两个实参，rest中的第一个实参被绑定到T，剩余实参形成下一个print调用的参数包</span></span><br></pre></td></tr></table></figure>
+<p>比如执行：<br>print(cout,i,s,42); &#x2F;&#x2F; 包中两个参数<br>print(cout,s,42);<br>print(cout,42); &#x2F;&#x2F; 此时调用非可变参数版本的print<br>原因是非可变参数模板必可变参数模板更加特例化<br>编译器选择非可变参数版本<br>（要把非可变参数版本声明在作用域中，否则无限递归）</p>
+<h3 id="16-4-2-包扩展"><a href="#16-4-2-包扩展" class="headerlink" title="16.4.2 包扩展"></a>16.4.2 包扩展</h3><p>对于参数包，要么获取大小，要么就是扩展<br>扩展时要提供用于每个扩展元素的 <em><strong>模式</strong></em></p>
+<p>const Args&amp;… rest &#x2F;&#x2F; 扩展Args 生成函数参数列表</p>
+<p>return print(os,rest…);<br>&#x2F;&#x2F; 扩展rest 为print调用生成实参列表</p>
+<p>模式是函数参数包的名字（rest）</p>
+<p>return print(os,debug_rep(rest)…);</p>
+<p>扩展结果是一个逗号分隔的debug_rep调用列表</p>
+<p>16.4.3 转发参数包<br>组合 <em><strong>可变参数模板</strong></em>和 <em><strong>forward机制</strong></em></p>
+<h2 id="16-5-模板特例化"><a href="#16-5-模板特例化" class="headerlink" title="16.5 模板特例化"></a>16.5 模板特例化</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;&gt;  <span class="comment">// 空尖括号表示为原模版提供实参</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">compare</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* <span class="type">const</span> &amp;p1,<span class="type">const</span> <span class="type">char</span>* <span class="type">const</span> &amp;p2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">strcmp</span>(p1,p2);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这是template &lt;typename T&gt;int compare(const T&amp;,const T&amp;);的特例化版本</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>特化一个函数模板时，必须为原模版中的每个模板参数提供实参<br>本质上是接管了编译器的工作<br>特例化版本的产物已经是实例，特例化不影响函数匹配</p>
+<h4 id="类模板特例化"><a href="#类模板特例化" class="headerlink" title="类模板特例化"></a>类模板特例化</h4><p>可以部分特例化类模板（模板参数；列表是原始模板的参数列表的子集或者特例化版本），而不能部分特例化函数模板</p>
+<p>可以只特例化成员函数而不是特例化整个模板</p>
+<h1 id="第十九章"><a href="#第十九章" class="headerlink" title="第十九章"></a>第十九章</h1><h3 id="19-1-1-重载new和delete"><a href="#19-1-1-重载new和delete" class="headerlink" title="19.1.1 重载new和delete"></a>19.1.1 重载new和delete</h3><h4 id="new的原理"><a href="#new的原理" class="headerlink" title="new的原理"></a>new的原理</h4><p>new表达式调用了一个名为operator new&#x2F;operator new[]的标准库函数，<br>1. 分配一块足够的、原始的、未命名的内存空间以储存对象<br>2. 然后编译器允许构造函数来构造对象<br>3. 接着对象被分配空间，构造完成，返回指向该对象的指针</p>
+<p>delete表达式：<br>1. 执行指针所指的对象的析构函数<br>2. 编译器调用operator delete标准库函数来释放内存空间<br>PS：析构函数不释放空间，只是删除对象，那块内存未被释放</p>
+<h4 id="malloc和free"><a href="#malloc和free" class="headerlink" title="malloc和free"></a>malloc和free</h4><p>cstdlib<br>malloc：入参为字节数，返回指向分配空间的指针，若返回9则表示失败<br>free：接受一个void*，释放内存</p>
+<h3 id="19-2-1-dynamic-cast运算符"><a href="#19-2-1-dynamic-cast运算符" class="headerlink" title="19.2.1 dynamic_cast运算符"></a>19.2.1 dynamic_cast运算符</h3><p>在运行时把指向基类的指针转为指向派生类的指针</p>
+<h4 id="指针类型的dynamic-cast"><a href="#指针类型的dynamic-cast" class="headerlink" title="指针类型的dynamic_cast"></a>指针类型的dynamic_cast</h4><p>if(Derived *dp &#x3D; dynamic_cast&lt;Derived*&gt;(bp))<br>&#x2F;&#x2F; 因为bp这个基类指针既可能指向基类，又可能指向派生类<br>&#x2F;&#x2F; 如果通过以上代码用类型转换来初始化dp，并令其指向bp所指的Derived对象<br>若dp为0则说明if语句失败<br>这样在if部分定义dp是同时完成了 <em><strong>类型转换</strong></em>和 <em><strong>条件检查</strong></em><br>实际上指针dp（未绑定）在if语句外是不可访问的<br>保证程序安全</p>
+<p>std::bind<br>对于一个可调用对象，可以减少可调用对象传入的参数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">TestFunc</span><span class="params">(<span class="type">int</span> a,<span class="type">char</span> c,<span class="type">float</span> f)</span></span></span><br><span class="line"><span class="function"><span class="keyword">auto</span> bindFunc1 </span>= <span class="built_in">bind</span>(TestFunc,std::placeholders::_1,<span class="string">&#x27;A&#x27;</span>,<span class="number">100.1</span>);</span><br><span class="line"><span class="comment">// 然后可以直接调用bindFunc1，如同一个新函数</span></span><br><span class="line"><span class="built_in">bindFunc1</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> bindFunc3 = <span class="built_in">bind</span>(TestFunc, std::placeholders::_2, std::placeholders::_3, std::placeholders::_1);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">bindFunc3</span>(<span class="number">100.1</span>, <span class="number">30</span>, <span class="string">&#x27;C&#x27;</span>);</span><br><span class="line"><span class="comment">/* 意思是：</span></span><br><span class="line"><span class="comment">bindFunc3的第二个参数和TestFunc的第一个参数匹配</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
 
       
     </div>
@@ -1256,12 +1427,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">16k</span>
+    <span title="站点总字数">28k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">26 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
