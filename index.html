@@ -314,7 +314,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-03 21:16:47" itemprop="dateModified" datetime="2023-05-03T21:16:47+08:00">2023-05-03</time>
+                <time title="修改时间：2023-08-20 22:26:31" itemprop="dateModified" datetime="2023-08-20T22:26:31+08:00">2023-08-20</time>
               </span>
 
           <br>
@@ -513,7 +513,8 @@
 <p>拷贝构造不应该是explicit的，因为是隐式地使用</p>
 <h4 id="合成拷贝构造函数"><a href="#合成拷贝构造函数" class="headerlink" title="合成拷贝构造函数"></a>合成拷贝构造函数</h4><p>内置类型的成员直接拷贝、类类型的则需要调用拷贝构造函数</p>
 <h4 id="拷贝初始化"><a href="#拷贝初始化" class="headerlink" title="拷贝初始化"></a>拷贝初始化</h4><p>string dots(10,’.’);    &#x2F;&#x2F; 直接初始化<br>string s(dots); &#x2F;&#x2F; 直接初始化 直接函数匹配调用了拷贝构造函数，所以它是直接初始化，而不是拷贝初始化<br>string s2 &#x3D; dots;   &#x2F;&#x2F; 拷贝初始化<br>string null_book &#x3D; “9-999-9”;   &#x2F;&#x2F; 拷贝<br>string nines &#x3D; string(100,’9’); &#x2F;&#x2F; 拷贝</p>
-<p><em><strong>直接初始化</strong></em>实际上是编译器使用函数匹配选择构造函数<br><em><strong>拷贝初始化</strong></em>实际上是编译器将有猜测运算对象拷贝到正在创建的对象中（可能还会涉及类型转换）<br>C++语言标准规定： <em><strong>拷贝初始化</strong></em>应该是先调用对应的构造函数创建一个 <em><strong>临时对象</strong></em> ，即额外创建对象<br>拷贝初始化有时会通过移动构造函数完成</p>
+<p>PS：<br>拷贝初始化只是一种程序语法格式T x &#x3D; initializer;    &#x2F;&#x2F; 用等<br>于号来初始化对象，就是拷贝初始化，即便未曾调用拷贝构造函数<br>拷贝初始化有时会通过移动构造函数完成(拷贝构造或者移动构造)</p>
+<p><em><strong>直接初始化</strong></em>实际上是编译器使用函数匹配选择构造函数<br><em><strong>拷贝初始化</strong></em>实际上是编译器将有猜测运算对象拷贝到正在创建的对象中（可能还会涉及类型转换）<br>C++语言标准规定： <em><strong>拷贝初始化</strong></em>应该是先调用对应的构造函数创建一个 <em><strong>临时对象</strong></em> ，即额外创建对象</p>
 <p>拷贝初始化发生在：<br>对象作为实参传递给非引用类型的形参<br>返回类型为非引用类型的函数 返回一个对象<br>{}列表初始化一个数组中的元素、或一个聚合类中的成员</p>
 <p>初始化标准库容器或者调用insert或push时，容器对齐元素进行拷贝初始化<br>emplace时直接初始化</p>
 <p>拷贝构造函数的参数必须是引用类型–&gt;因为如果不是引用，调用永远都不会成功，为了调用拷贝构造函数，我们必须拷贝它的实参，为了拷贝实参，又必须调用拷贝构造函数</p>
